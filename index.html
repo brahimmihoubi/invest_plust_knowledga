@@ -11,12 +11,15 @@
           extend: {
             colors: {
               primary: {
-                DEFAULT: "#3FAF6C",
-                dark: "#1F5F63",
-                light: "#6BCF9A",
+                DEFAULT: "#10B981", // Emerald 500 - more vibrant green
+                dark: "#064E3B",   // Emerald 900 - very deep for visibility
+                light: "#6EE7B7",  // Emerald 300 - soft highlight
               },
-              secondary: "#1F5F63",
-              accent: "#6BCF9A",
+              secondary: {
+                DEFAULT: "#1F5F63", // Keeping the requested deep teal as secondary
+                light: "#2D8A8F",
+              },
+              accent: "#F59E0B", // Amber for call-to-actions (high visibility)
             },
           },
         },

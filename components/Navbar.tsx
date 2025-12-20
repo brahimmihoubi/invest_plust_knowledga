@@ -79,11 +79,15 @@ const Navbar: React.FC = () => {
     { label: t('nav.achievements'), id: 'achievements' },
   ];
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.nav 
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: 'spring', stiffness: 100, damping: 20 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled ? 'glass py-2' : 'bg-transparent py-4'
       } border-b border-transparent ${scrolled ? 'border-slate-200/50' : ''}`}
@@ -109,7 +113,20 @@ const Navbar: React.FC = () => {
             </div>
           </div>
           
-          <div className="flex items-center w-full lg:w-auto overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0">
+          <motion.div 
+            initial={false}
+            animate={{ 
+              opacity: isHovered || !scrolled ? 1 : 0,
+              y: isHovered || !scrolled ? 0 : -10,
+              scale: isHovered || !scrolled ? 1 : 0.98,
+            }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
+            style={{ 
+              pointerEvents: isHovered || !scrolled ? 'auto' : 'none',
+              visibility: isHovered || !scrolled ? 'visible' : 'hidden' 
+            }}
+            className="flex items-center w-full lg:w-auto overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0"
+          >
             <div className="flex space-x-1 lg:space-x-1 items-center min-w-max pb-1 lg:pb-0 relative">
               {navItems.map((item) => (
                 <motion.a
@@ -147,7 +164,7 @@ const Navbar: React.FC = () => {
                 </Link>
               </motion.div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
       <style>{`

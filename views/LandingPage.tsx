@@ -15,13 +15,7 @@ import InvestisorSection from '../components/InvestisorSection';
 import PartnersSection from '../components/PartnersSection';
 import AchievementsSection from '../components/AchievementsSection';
 
-const fadeInUp = {
-  initial: { y: 60, opacity: 0 },
-  whileInView: { y: 0, opacity: 1 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: "easeOut" }
-};
-
+import SectionReveal from '../components/ui/SectionReveal';
 
 const LandingPage: React.FC = () => {
   const { t } = useTranslation();
@@ -41,50 +35,57 @@ const LandingPage: React.FC = () => {
 
       <HeroSection />
 
-      <AboutSection />
+      <SectionReveal>
+        <AboutSection />
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <MembersSection />
-      </motion.div>
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <ExpertsSection />
-      </motion.div>
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <ProjectsSection />
-      </motion.div>
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <MethodSection />
-      </motion.div>
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <InvestisorSection />
-      </motion.div>
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <PartnersSection />
-      </motion.div>
+      </SectionReveal>
       
-      <motion.div {...fadeInUp}>
+      <SectionReveal>
         <AchievementsSection />
-      </motion.div>
+      </SectionReveal>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-slate-200" style={{ backgroundColor: '#1F5F63' }}>
-        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-2">
+      <footer className="py-12 border-t border-slate-200 bg-secondary">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 items-center gap-8">
+          {/* Logo at the start */}
+          <div className="flex justify-center md:justify-start">
             <img src="/logo.png" alt="InvestPlus" className="h-16 w-auto invert brightness-0" />
           </div>
-          <div className="flex gap-8 text-white/80 text-sm font-bold items-center">
+          
+          {/* Links and Switcher in the middle */}
+          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm font-bold items-center min-w-max">
             <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
             <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
-            <a href="#" className="hover:text-primary-light transition-colors">{t('footer.status')}</a>
-            <div className="h-4 w-px bg-white/20"></div>
+            <a href="#" className="hover:text-accent transition-colors">{t('footer.status')}</a>
+            <div className="hidden lg:block h-4 w-px bg-white/20"></div>
             <LanguageSwitcher />
           </div>
-          <p className="text-white/60 text-sm font-bold">{t('footer.rights')}</p>
+
+          {/* Empty div to balance the grid for perfect centering of the middle part */}
+          <div className="hidden md:block"></div>
         </div>
       </footer>
 

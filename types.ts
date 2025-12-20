@@ -31,3 +31,11 @@ export interface RegisteredUser {
   company: string;
   timestamp: string;
 }
+
+export interface Announcement {
+  id: string;
+  title: string;
+  content: string;
+  date: string;
+  type: 'info' | 'critical' | 'success';
+}
