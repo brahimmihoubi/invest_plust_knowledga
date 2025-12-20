@@ -1,0 +1,8 @@
+{
+  "name": "InvestPlus Platform Template",
+  "description": "A comprehensive SaaS landing page and admin dashboard template featuring AI-driven insights, responsive layout, and real-time data visualization.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
