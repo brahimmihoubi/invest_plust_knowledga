@@ -19,17 +19,17 @@
 
 ---
 
-## 🌟 Overview
+## Overview
 
 **InvestPlus** is a sophisticated Business Intelligence platform designed to transform raw data into actionable growth strategies. Leveraging the advanced capabilities of **Google Gemini AI**, InvestPlus identifies patterns, provides insights, and helps businesses stay ahead in a competitive market.
 
 Built with a focus on modern UI/UX, multi-language support, and interactive data visualization, it offers a seamless experience for both administrators and investors.
 
-## ✨ Key Features
+## Key Features
 
-- **🤖 AI Business Insights**: Real-time analysis of dashboard metrics using Gemini AI to provide strategic growth recommendations.
-- **✍️ AI Content Generator**: A dedicated tool to generate high-converting marketing copy and project descriptions instantly.
-- **🌍 Multi-Language Support**: Seamlessly switch between **English**, **French**, and **Arabic**, including full **RTL (Right-to-Left)** layout support.
+- **AI Business Insights**: Real-time analysis of dashboard metrics using Gemini AI to provide strategic growth recommendations.
+- **AI Content Generator**: A dedicated tool to generate high-converting marketing copy and project descriptions instantly.
+- **Multi-Language Support**: Seamlessly switch between **English**, **French**, and **Arabic**, including full **RTL (Right-to-Left)** layout support.
 - **Dynamic Dashboard**: Visualize business metrics with interactive charts (Area/Bar) and real-time data updates using Recharts.
 - **Modern Animations**: Fluid transitions, hover effects, and scroll-based animations powered by Framer Motion.
 - **Member & Expert Management**: Dedicated sections to showcase team members, experts, and partners with individual profiles.
@@ -37,7 +37,7 @@ Built with a focus on modern UI/UX, multi-language support, and interactive data
 - **Fully Responsive**: Optimized for all devices, from desktops to mobile phones.
 - **User Registration**: Streamlined onboarding process for new members and investors.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 - **Frontend Core**: [React 19](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
 - **Build System**: [Vite](https://vitejs.dev/)
