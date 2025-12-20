@@ -7,61 +7,91 @@
     </tr>
   </table>
   
-  # InvestPlus Knowledge 
+  # InvestPlus Knowledge Platform
 
 [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
 [![Vite](https://img.shields.io/badge/Vite-6-purple.svg)](https://vitejs.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-pink.svg)](https://www.framer.com/motion/)
 [![i18next](https://img.shields.io/badge/Internationalization-i18next-brightgreen.svg)](https://www.i18next.com/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg)](https://tailwindcss.com/)
 
 </div>
 
 ---
 
-## Overview
+## 🚀 Overview
 
-**InvestPlus** is a sophisticated Business Intelligence platform designed to transform raw data into actionable growth strategies. Leveraging the advanced capabilities of **Google Gemini AI**, InvestPlus identifies patterns, provides insights, and helps businesses stay ahead in a competitive market.
+**InvestPlus Knowledge** is a next-generation Business Intelligence and Investment platform. Developed with a focus on high-end aesthetics and cutting-edge performance, it serves as a central hub for investors and businesses to gain AI-driven insights, generate high-impact content, and manage investment projects with precision.
 
-Built with a focus on modern UI/UX, multi-language support, and interactive data visualization, it offers a seamless experience for both administrators and investors.
+The platform is designed to be **dynamic, interactive, and globally accessible**, featuring full multi-language support and a premium user experience.
 
-## Key Features
+---
 
-- **AI Business Insights**: Real-time analysis of dashboard metrics using Gemini AI to provide strategic growth recommendations.
-- **AI Content Generator**: A dedicated tool to generate high-converting marketing copy and project descriptions instantly.
-- **Multi-Language Support**: Seamlessly switch between **English**, **French**, and **Arabic**, including full **RTL (Right-to-Left)** layout support.
-- **Dynamic Dashboard**: Visualize business metrics with interactive charts (Area/Bar) and real-time data updates using Recharts.
-- **Modern Animations**: Fluid transitions, hover effects, and scroll-based animations powered by Framer Motion.
-- **Member & Expert Management**: Dedicated sections to showcase team members, experts, and partners with individual profiles.
-- **Project Showcases**: Present investment projects and achievements with high-impact visual components.
-- **Fully Responsive**: Optimized for all devices, from desktops to mobile phones.
-- **User Registration**: Streamlined onboarding process for new members and investors.
+## ✨ Pro Features
 
-## Technology Stack
+### 1. 📢 Dynamic Announcement Hub
 
-- **Frontend Core**: [React 19](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/)
-- **Build System**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Animations**: [Framer Motion](https://www.framer.com/motion/)
-- **AI Integration**: [@google/genai (Gemini AI)](https://ai.google.dev/)
-- **Internationalization**: [i18next](https://www.i18next.com/), [react-i18next](https://react.i18next.com/)
-- **Data Visualization**: [Recharts](https://recharts.org/)
-- **Routing**: [React Router Dom](https://reactrouter.com/)
+The Hero section is transformed into a live news feed.
 
-## Getting Started
+- **Automated Slider**: Smooth 8-second auto-play cycles.
+- **Manual Navigation**: Vibrant green gradient buttons with spring-based hover effects.
+- **Directional Transitions**: Announcements slide in/out based on navigation direction for an organic feel.
+- **Fully Localized**: Every announcement is instantly translatable.
+
+### 2. 🧠 AI-Powered Insights & Generator
+
+- **Gemini 1.5 Pro Integration**: Real-time analysis of business metrics and dashboard data.
+- **Content Studio**: Generate marketing copies, project descriptions, and growth strategies instantly.
+- **Interactive Assistant**: A dedicated AI sidekick for real-time query handling.
+
+### 3. 🌐 Global Reach (i18n)
+
+- **Three Core Languages**: Full support for **English**, **French**, and **Arabic**.
+- **Adaptive Layouts**: Automatic **RTL (Right-to-Left)** switching for Arabic.
+- **Translated Metadata**: Everything from section titles to footer links and news content is localized.
+
+### 4. 🎨 Premium Design & Animations
+
+- **Smart Navbar**: Intelligently hides on scroll to maximize screen space; reveals elegantly with a blur-scale effect on hover.
+- **Section Reveal**: Sophisticated "Blur-to-Clear" entrance animations as you scroll down the page.
+- **Micro-interactions**: Icon buttons that subtly "pull" toward the cursor for a tactile feel.
+- **Emerald Palette**: A custom-crafted design system using Emerald, Deep Teal, and Amber highlights for maximum visibility.
+
+### 5. 📊 Advanced Dashboard
+
+- **Interactive Visualization**: High-performance charts powered by Recharts.
+- **Project Tracking**: Dedicated modules for managing members, experts, and investment projects.
+- **Admin Center**: A centralized view for high-level technical management.
+
+---
+
+## 🛠 Technology Stack
+
+- **Framework**: React 19 (Latest) + Vite
+- **Language**: TypeScript (Strict Mode)
+- **Styling**: Tailwind CSS with custom Design Tokens
+- **Animations**: Framer Motion (Orchestration & Spring Physics)
+- **AI Backend**: Google Gemini AI (Vertex AI/AI Studio)
+- **State & I18n**: i18next & react-i18next
+- **Charts**: Recharts
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- **Node.js**: (Version 18 or higher recommended)
-- **NPM** or **Yarn**
+- **Node.js**: v18.0.0 or higher
+- **NPM**: v9.0.0 or higher
 
 ### Installation
 
-1.  **Clone the repository:**
+1.  **Clone the platform:**
 
     ```bash
-    git clone https://github.com/your-username/invest_plus_knowledge.git
-    cd invest_plus_knowledge
+    git clone https://github.com/brahimmihoubi/invest_plust_knowledga.git
+    cd invest_plust_knowledga
     ```
 
 2.  **Install dependencies:**
@@ -70,37 +100,48 @@ Built with a focus on modern UI/UX, multi-language support, and interactive data
     npm install
     ```
 
-3.  **Environment Setup:**
-    Create a `.env.local` file in the root directory and add your Google Gemini API key:
+3.  **Configure AI:**
+    Create a `.env` file in the root:
 
     ```env
-    VITE_GEMINI_API_KEY=your_api_key_here
+    VITE_GEMINI_API_KEY=your_google_gemini_api_key
     ```
 
-4.  **Run Development Server:**
+4.  **Launch:**
     ```bash
     npm run dev
     ```
-    Open [http://localhost:5173](http://localhost:5173) in your browser.
-
-## Project Structure
-
-```text
-├── components/          # Reusable UI components (Navbar, Sections, AI Assistant)
-├── views/               # Main page layouts (LandingPage, Dashboard, Register)
-├── services/            # API and business logic handlers (Gemini service)
-├── i18n.ts              # Internationalization configuration (EN, FR, AR)
-├── App.tsx              # Main application entry and routing
-├── types.ts             # TypeScript interfaces and types
-└── public/              # Static assets (logos, images)
-```
-
-## Contributing
-
-Contributions are welcome! If you'd like to improve InvestPlus, please feel free to fork the repo and submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
+
+## 📂 Project Architecture
+
+```text
+├── components/
+│   ├── ui/              # Atom-level components (IconButton, SectionReveal)
+│   ├── Navbar/          # Smart navigation logic
+│   └── Sections/        # Modular landing page segments
+├── services/
+│   ├── geminiService.ts # AI logic
+│   └── announcementService.ts # News data management
+├── views/               # Page-level compositions
+├── i18n/                # Language resources (EN, FR, AR)
+├── types/               # Unified TypeScript interfaces
+└── public/              # Optimized static assets
+```
+
+---
+
+## 🤝 Contributing
+
+We are constantly refining the InvestPlus experience. Feel free to open issues or submit PRs to enhance the platform's capabilities.
+
+## 📄 License
+
+InvestPlus Knowledge is open-source software licensed under the **MIT License**.
+
+---
+
+<div align="center">
+  Built with ❤️ for the future of Investment.
+</div>
