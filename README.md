@@ -20,7 +20,7 @@
 
 ---
 
-## 🚀 Overview
+## Overview
 
 **InvestPlus Knowledge** is a next-generation Business Intelligence and Investment platform. Developed with a focus on high-end aesthetics and cutting-edge performance, it serves as a central hub for investors and businesses to gain AI-driven insights, generate high-impact content, and manage investment projects with precision.
 
@@ -28,9 +28,9 @@ The platform is designed to be **dynamic, interactive, and globally accessible**
 
 ---
 
-## ✨ Pro Features
+## Pro Features
 
-### 1. 📢 Dynamic Announcement Hub
+### 1.  Dynamic Announcement Hub
 
 The Hero section is transformed into a live news feed.
 
@@ -39,26 +39,26 @@ The Hero section is transformed into a live news feed.
 - **Directional Transitions**: Announcements slide in/out based on navigation direction for an organic feel.
 - **Fully Localized**: Every announcement is instantly translatable.
 
-### 2. 🧠 AI-Powered Insights & Generator
+### 2.  AI-Powered Insights & Generator
 
 - **Gemini 1.5 Pro Integration**: Real-time analysis of business metrics and dashboard data.
 - **Content Studio**: Generate marketing copies, project descriptions, and growth strategies instantly.
 - **Interactive Assistant**: A dedicated AI sidekick for real-time query handling.
 
-### 3. 🌐 Global Reach (i18n)
+### 3.  Global Reach (i18n)
 
 - **Three Core Languages**: Full support for **English**, **French**, and **Arabic**.
 - **Adaptive Layouts**: Automatic **RTL (Right-to-Left)** switching for Arabic.
 - **Translated Metadata**: Everything from section titles to footer links and news content is localized.
 
-### 4. 🎨 Premium Design & Animations
+### 4.  Premium Design & Animations
 
 - **Smart Navbar**: Intelligently hides on scroll to maximize screen space; reveals elegantly with a blur-scale effect on hover.
 - **Section Reveal**: Sophisticated "Blur-to-Clear" entrance animations as you scroll down the page.
 - **Micro-interactions**: Icon buttons that subtly "pull" toward the cursor for a tactile feel.
 - **Emerald Palette**: A custom-crafted design system using Emerald, Deep Teal, and Amber highlights for maximum visibility.
 
-### 5. 📊 Advanced Dashboard
+### 5.  Advanced Dashboard
 
 - **Interactive Visualization**: High-performance charts powered by Recharts.
 - **Project Tracking**: Dedicated modules for managing members, experts, and investment projects.
@@ -66,7 +66,7 @@ The Hero section is transformed into a live news feed.
 
 ---
 
-## 🛠 Technology Stack
+## Technology Stack
 
 - **Framework**: React 19 (Latest) + Vite
 - **Language**: TypeScript (Strict Mode)
@@ -78,7 +78,7 @@ The Hero section is transformed into a live news feed.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -114,7 +114,7 @@ The Hero section is transformed into a live news feed.
 
 ---
 
-## 📂 Project Architecture
+## Project Architecture
 
 ```text
 ├── components/
@@ -132,16 +132,16 @@ The Hero section is transformed into a live news feed.
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We are constantly refining the InvestPlus experience. Feel free to open issues or submit PRs to enhance the platform's capabilities.
 
-## 📄 License
+## License
 
 InvestPlus Knowledge is open-source software licensed under the **MIT License**.
 
 ---
 
-<div align="center">
+<!-- <div align="center">
   Built with ❤️ for the future of Investment.
-</div>
+</div> -->
