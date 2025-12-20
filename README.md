@@ -2,7 +2,7 @@
   <table>
     <tr>
       <td bgcolor="white" align="center">
-        <img src="public/logo.png" width="200" alt="InvestPlus Logo" />
+        <img src="public/logo2.jpeg" width="200" alt="InvestPlus Logo" />
       </td>
     </tr>
   </table>
