@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import LandingPage from './views/LandingPage';
-import Dashboard from './views/Dashboard';
 import RegisterPage from './views/RegisterPage';
 
 const ScrollToTop = () => {
@@ -20,7 +19,6 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route path="/admin/*" element={<Dashboard />} />
       </Routes>
     </HashRouter>
   );

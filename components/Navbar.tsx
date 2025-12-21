@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState<string>('');
@@ -100,13 +101,18 @@ const Navbar: React.FC = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link to="/" onClick={(e) => handleNavClick(e, 'hero')} className="flex items-center">
-                <img src="/logo.png" alt="InvestPlus" className="h-16 lg:h-20 w-auto scale-125 origin-left" />
+                <img 
+                  src="/logo.png" 
+                  alt="InvestPlus" 
+                  className={`h-16 lg:h-20 w-auto scale-125 ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
+                />
               </Link>
             </motion.div>
             
             <div className="flex items-center gap-3 lg:hidden">
+              <LanguageSwitcher />
               <motion.div whileTap={{ scale: 0.9 }}>
-                <Link to="/register" className="px-4 py-2 bg-primary text-white rounded-full font-bold text-xs whitespace-nowrap shadow-lg shadow-primary/25">
+                <Link to="/register" className="px-3.5 py-1.5 bg-primary text-white rounded-full font-bold text-[11px] whitespace-nowrap shadow-lg shadow-primary/25">
                   {t('nav.join')}
                 </Link>
               </motion.div>
@@ -127,7 +133,7 @@ const Navbar: React.FC = () => {
             }}
             className="flex items-center w-full lg:w-auto overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0"
           >
-            <div className="flex space-x-1 lg:space-x-1 items-center min-w-max pb-1 lg:pb-0 relative">
+            <div className="flex gap-1 lg:gap-1 items-center min-w-max pb-1 lg:pb-0 relative">
               {navItems.map((item) => (
                 <motion.a
                   key={item.id}
@@ -151,20 +157,21 @@ const Navbar: React.FC = () => {
                   )}
                 </motion.a>
               ))}
-              
-              <div className="hidden lg:block h-6 w-px bg-slate-200/60 mx-4"></div>
-              
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="hidden lg:block"
-              >
-                <Link to="/register" className="px-6 py-2.5 bg-primary text-white rounded-full font-bold hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 whitespace-nowrap">
-                  {t('nav.join')}
-                </Link>
-              </motion.div>
             </div>
           </motion.div>
+
+          <div className="hidden lg:flex items-center gap-4 ms-4">
+            <div className="h-6 w-px bg-slate-200/60 me-4"></div>
+            <LanguageSwitcher />
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/register" className="px-5 py-1.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 whitespace-nowrap">
+                {t('nav.join')}
+              </Link>
+            </motion.div>
+          </div>
         </div>
       </div>
       <style>{`

@@ -22,7 +22,8 @@ const resources = {
         highlight: 'Business Intelligence',
         subtitle: 'InvestPlus combines advanced analytics with the power of Gemini to transform your raw data into actionable growth strategies.',
         join: 'Join the Waitlist',
-        admin: 'Admin View'
+        more_about: 'Know more about our company',
+        join_now: 'Join us'
       },
       footer: {
         privacy: 'Privacy',
@@ -32,35 +33,35 @@ const resources = {
       },
       about: {
         title: 'About us',
-        content: 'Content for About us section will be provided by user.'
+        content: 'InvestPlus is a leading platform in investment and business intelligence, combining deep expertise with cutting-edge technology to help our partners achieve sustainable growth.'
       },
       members: {
         title: 'Members',
-        content: 'Content for Members section will be provided by user.'
+        content: 'Our team consists of elite talents committed to excellence and innovation in everything we provide.'
       },
       experts: {
         title: 'Experts',
-        content: 'Content for Experts section will be provided by user.'
+        content: 'We take pride in a wide network of international consultants and experts who provide precise strategic insights.'
       },
       projects: {
-        title: 'Investments Projects',
-        content: 'Content for Investments Projects section will be provided by user.'
+        title: 'Investment Projects',
+        content: 'We offer revolutionary opportunities in sustainable energy, technology, and real estate, carefully selected to ensure the best returns.'
       },
       method: {
-        title: 'Work method',
-        content: 'Content for Work method section will be provided by user.'
+        title: 'Work Method',
+        content: 'We adopt a scientific methodology that starts with precise data analysis and ends with the implementation of integrated growth strategies.'
       },
       investisor: {
-        title: 'Investisor',
-        content: 'Content for Investisor section will be provided by user.'
+        title: 'Investor',
+        content: 'We provide investors with the tools and data necessary to make informed decisions that enhance their investment portfolios.'
       },
       partners: {
         title: 'Partners',
-        content: 'Content for Partners section will be provided by user.'
+        content: 'We believe in the power of strategic partnerships to build a prosperous and inclusive economic future.'
       },
       achievements: {
         title: 'Achievements',
-        content: 'Content for Achievements section will be provided by user.'
+        content: 'A proven track record of success in managing major portfolios and launching large-scale projects across continents.'
       },
       news: {
         announcement_1: {
@@ -75,6 +76,21 @@ const resources = {
           title: 'Upcoming Expert Webinar',
           content: 'Don\'t miss our live session on Market Trends 2026. Register through the admin portal.'
         }
+      },
+      register: {
+        page_title: 'Join InvestPlus',
+        page_subtitle: 'Experience the next generation of business intelligence.',
+        title: 'Join the waitlist',
+        subtitle: 'Get early access to our AI features and join 2,000+ other companies.',
+        name: 'Full Name',
+        name_placeholder: 'Jane Doe',
+        email: 'Work Email',
+        email_placeholder: 'jane@company.com',
+        company: 'Company Name',
+        company_placeholder: 'Acme Inc.',
+        button: 'Register for Early Access',
+        success_title: 'Welcome aboard!',
+        success_message: 'Your registration was successful. We will contact you soon.'
       }
     }
   },
@@ -97,7 +113,8 @@ const resources = {
         highlight: 'Business Intelligence',
         subtitle: 'InvestPlus combine des analyses avancées avec la puissance de Gemini pour transformer vos données brutes en stratégies de croissance concrètes.',
         join: 'Rejoindre la liste d\'attente',
-        admin: 'Vue Admin'
+        more_about: 'En savoir plus sur notre entreprise',
+        join_now: 'Rejoignez-nous'
       },
       footer: {
         privacy: 'Confidentialité',
@@ -106,35 +123,35 @@ const resources = {
       },
       about: {
         title: 'À propos de nous',
-        content: 'Le contenu de la section À propos sera fourni par l\'utilisateur.'
+        content: 'InvestPlus est une plateforme leader dans l\'investissement et l\'intelligence d\'affaires, combinant une expertise approfondie et une technologie de pointe pour aider nos partenaires à atteindre une croissance durable.'
       },
       members: {
         title: 'Membres',
-        content: 'Le contenu de la section Membres sera fourni par l\'utilisateur.'
+        content: 'Notre équipe est composée de talents d\'élite engagés dans l\'excellence et l\'innovation dans tout ce que nous fournissons.'
       },
       experts: {
         title: 'Experts',
-        content: 'Le contenu de la section Experts sera fourni par l\'utilisateur.'
+        content: 'Nous sommes fiers d\'un large réseau de consultants et d\'experts internationaux qui fournissent des informations stratégiques précises.'
       },
       projects: {
         title: 'Projets d\'investissement',
-        content: 'Le contenu de la section Projets sera fourni par l\'utilisateur.'
+        content: 'Nous offrons des opportunités révolutionnaires dans l\'énergie durable, la technologie et l\'immobilier, soigneusement sélectionnées pour assurer les meilleurs rendements.'
       },
       method: {
         title: 'Méthode de travail',
-        content: 'Le contenu de la section Méthode sera fourni par l\'utilisateur.'
+        content: 'Nous adoptons une méthodologie scientifique qui commence par une analyse précise des données et se termine par la mise en œuvre de stratégies de croissance intégrées.'
       },
       investisor: {
         title: 'Investisseur',
-        content: 'Le contenu de la section Investisseur sera fourni par l\'utilisateur.'
+        content: 'Nous fournissons aux investisseurs les outils et les données nécessaires pour prendre des décisions éclairées qui améliorent leurs portefeuilles d\'investissement.'
       },
       partners: {
         title: 'Partenaires',
-        content: 'Le contenu de la section Partenaires sera fourni par l\'utilisateur.'
+        content: 'Nous croyons au pouvoir des partenariats stratégiques pour construire un avenir économique prospère et inclusif.'
       },
       achievements: {
         title: 'Réalisations',
-        content: 'Le contenu de la section Réalisations sera fourni par l\'utilisateur.'
+        content: 'Un historique de succès avéré dans la gestion de portefeuilles majeurs et le lancement de projets de grande envergure à travers les continents.'
       },
       news: {
         announcement_1: {
@@ -149,6 +166,21 @@ const resources = {
           title: 'Webinaire d\'experts à venir',
           content: 'Ne manquez pas notre session en direct sur les tendances du marché 2026. Inscrivez-vous via le portail admin.'
         }
+      },
+      register: {
+        page_title: 'Rejoindre InvestPlus',
+        page_subtitle: 'Découvrez la prochaine génération de business intelligence.',
+        title: 'Rejoindre la liste d\'attente',
+        subtitle: 'Bénéficiez d\'un accès anticipé à nos fonctionnalités d\'IA et rejoignez plus de 2000 autres entreprises.',
+        name: 'Nom complet',
+        name_placeholder: 'Jean Dupont',
+        email: 'Email professionnel',
+        email_placeholder: 'jean@entreprise.com',
+        company: 'Nom de l\'entreprise',
+        company_placeholder: 'Entreprise S.A.',
+        button: 'S\'inscrire pour l\'accès anticipé',
+        success_title: 'Bienvenue à bord !',
+        success_message: 'Votre inscription a été réussie. Nous vous contacterons bientôt.'
       }
     }
   },
@@ -171,7 +203,8 @@ const resources = {
         highlight: 'ذكاء الأعمال',
         subtitle: 'تجمع InvestPlus بين التحليلات المتقدمة وقوة Gemini لتحويل بياناتك الخام إلى استراتيجيات نمو قابلة للتطوير.',
         join: 'انضم إلى قائمة الانتظار',
-        admin: 'عرض المسؤول'
+        more_about: 'تعرف أكثر على شركتنا',
+        join_now: 'انضم إلينا'
       },
       footer: {
         privacy: 'الخصوصية',
@@ -181,35 +214,35 @@ const resources = {
       },
       about: {
         title: 'من نحن',
-        content: 'سيتم توفير محتوى قسم "من نحن" من قبل المستخدم.'
+        content: 'InvestPlus هي منصة رائدة في مجال الاستثمار وذكاء الأعمال، نجمع بين الخبرة العميقة والتقنيات المتطورة لمساعدة شركائنا على تحقيق نمو مستدام.'
       },
       members: {
         title: 'الأعضاء',
-        content: 'سيتم توفير محتوى قسم الأعضاء من قبل المستخدم.'
+        content: 'فريقنا يتكون من نخبة الكفاءات الملتزمة بالتميز والابتكار في كل ما نقدمه من خدمات وحلول.'
       },
       experts: {
         title: 'الخبراء',
-        content: 'سيتم توفير محتوى قسم الخبراء من قبل المستخدم.'
+        content: 'نفتخر بشبكة واسعة من المستشارين والخبراء الدوليين الذين يقدمون رؤى استراتيجية دقيقة.'
       },
       projects: {
         title: 'مشاريع الاستثمار',
-        content: 'سيتم توفير محتوى قسم مشاريع الاستثمار من قبل المستخدم.'
+        content: 'نقدم فرص ثورية في مجالات الطاقة المستدامة، التكنولوجيا، والعقارات، مختارة بعناية لضمان أفضل العوائد.'
       },
       method: {
         title: 'طريقة العمل',
-        content: 'سيتم توفير محتوى قسم طريقة العمل من قبل المستخدم.'
+        content: 'نعتمد منهجية علمية تبدأ بالتحليل الدقيق للبيانات وتنتهي بتنفيذ استراتيجيات نمو متكاملة.'
       },
       investisor: {
         title: 'المستثمر',
-        content: 'سيتم توفير محتوى قسم المستثمر من قبل المستخدم.'
+        content: 'نوفر للمستثمرين الأدوات والبيانات اللازمة لاتخاذ قرارات مدروسة تعزز محافظهم الاستثمارية.'
       },
       partners: {
         title: 'الشركاء',
-        content: 'سيتم توفير محتوى قسم الشركاء من قبل المستخدم.'
+        content: 'نؤمن بقوة الشراكات الاستراتيجية لبناء مستقبل اقتصادي مزدهر وشامل.'
       },
       achievements: {
         title: 'الإنجازات',
-        content: 'سيتم توفير محتوى قسم الإنجازات من قبل المستخدم.'
+        content: 'سجل حافل من النجاحات في إدارة المحافظ الكبرى وإطلاق المشاريع الضخمة عبر القارات.'
       },
       news: {
         announcement_1: {
@@ -224,6 +257,21 @@ const resources = {
           title: 'ندوة خبراء قادمة',
           content: 'لا تفوت جلستنا المباشرة حول اتجاهات السوق 2026. سجل عبر بوابة المسؤول.'
         }
+      },
+      register: {
+        page_title: 'انضم إلى InvestPlus',
+        page_subtitle: 'اختبر الجيل القادم من ذكاء الأعمال.',
+        title: 'انضم إلى قائمة الانتظار',
+        subtitle: 'احصل على وصول مبكر لميزات الذكاء الاصطناعي لدينا وانضم إلى أكثر من 2000 شركة أخرى.',
+        name: 'الاسم الكامل',
+        name_placeholder: 'محمد أحمد',
+        email: 'البريد الإلكتروني للعمل',
+        email_placeholder: 'name@company.com',
+        company: 'اسم الشركة',
+        company_placeholder: 'شركة المساهمة',
+        button: 'سجل للحصول على وصول مبكر',
+        success_title: 'أهلاً بك معنا!',
+        success_message: 'تم تسجيلك بنجاح. سنتواصل معك قريبًا.'
       }
     }
   }
@@ -239,15 +287,26 @@ i18n
       escapeValue: false,
     },
     detection: {
-      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
-      caches: ['localStorage', 'cookie'],
+      order: ['localStorage', 'querystring', 'cookie', 'navigator', 'htmlTag'],
+      lookupLocalStorage: 'investplus_lng',
+      caches: ['localStorage'],
     },
   });
 
-// Handle RTL
-i18n.on('languageChanged', (lng) => {
+// Set initial RTL state and handle changes
+const updateHtmlAttributes = (lng: string) => {
   document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
   document.documentElement.lang = lng;
+};
+
+// Apply on initial load
+const currentLng = i18n.language || localStorage.getItem('investplus_lng') || 'en';
+updateHtmlAttributes(currentLng);
+
+// Handle language changes
+i18n.on('languageChanged', (lng) => {
+  localStorage.setItem('investplus_lng', lng);
+  updateHtmlAttributes(lng);
 });
 
 export default i18n;

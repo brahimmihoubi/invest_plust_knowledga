@@ -80,8 +80,6 @@ const LandingPage: React.FC = () => {
             <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
             <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
             <a href="#" className="hover:text-accent transition-colors">{t('footer.status')}</a>
-            <div className="hidden lg:block h-4 w-px bg-white/20"></div>
-            <LanguageSwitcher />
           </div>
 
           {/* Empty div to balance the grid for perfect centering of the middle part */}
@@ -95,7 +93,7 @@ const LandingPage: React.FC = () => {
             initial={{ opacity: 0, scale: 0, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0, y: 20 }}
-            className="fixed bottom-8 right-8 z-50 pointer-events-auto"
+            className="fixed bottom-8 right-8 rtl:right-auto rtl:left-8 z-50 pointer-events-auto"
           >
             <IconButton
               variant="primary"

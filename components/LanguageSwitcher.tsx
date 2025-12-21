@@ -12,7 +12,7 @@ const LanguageSwitcher: React.FC = () => {
     { code: 'ar', name: 'العربية', flag: '🇩🇿' }
   ];
 
-  const currentLang = languages.find(l => i18n.language.startsWith(l.code)) || languages[0];
+  const currentLang = languages.find(l => i18n.language?.startsWith(l.code)) || languages[0];
 
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
@@ -23,38 +23,36 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative">
       <button 
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-50 hover:bg-slate-100 transition-all border border-slate-200 font-bold text-sm text-slate-600"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-slate-50 hover:bg-white transition-all border border-slate-200/60 font-semibold text-[10px] text-slate-600 shadow-sm"
       >
-        <span className="text-lg">{currentLang.flag}</span>
-        <span className="uppercase">{currentLang.code}</span>
-        <motion.span 
+        <span className="uppercase tracking-widest">{currentLang.code}</span>
+        <motion.svg 
           animate={{ rotate: isOpen ? 180 : 0 }}
-          className="text-xs opacity-50"
+          className="w-2.5 h-2.5 opacity-40"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
         >
-          ▼
-        </motion.span>
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+        </motion.svg>
       </button>
 
       <AnimatePresence>
         {isOpen && (
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95, y: -20 }}
-            animate={{ opacity: 1, scale: 1, y: -10 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            className="absolute bottom-full mb-2 right-0 bg-white shadow-2xl rounded-2xl border border-slate-100 p-2 min-w-[160px] z-50 overflow-hidden"
+            initial={{ opacity: 0, scale: 0.95, y: 10 }}
+            animate={{ opacity: 1, scale: 1, y: 5 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            className="absolute top-full mt-2 right-0 bg-white/95 backdrop-blur-md shadow-2xl rounded-2xl border border-slate-100 p-1.5 min-w-[120px] z-50 overflow-hidden"
           >
             {languages.map((lang) => (
               <button
                 key={lang.code}
                 onClick={() => changeLanguage(lang.code)}
-                className={`flex items-center w-full px-4 py-3 text-sm font-bold hover:bg-slate-50 rounded-xl transition-colors gap-3 ${
-                  i18n.language.startsWith(lang.code) ? 'text-primary bg-primary/5' : 'text-slate-600'
+                className={`flex items-center justify-between w-full px-3 py-2 text-xs font-semibold hover:bg-slate-50 rounded-xl transition-colors ${
+                  i18n.language?.startsWith(lang.code) ? 'text-primary bg-primary/5' : 'text-slate-600'
                 }`}
               >
-                <span className="text-xl">{lang.flag}</span>
-                <div className="flex flex-col items-start translate-y-[-1px]">
-                  <span className="leading-none">{lang.name}</span>
-                </div>
+                <span className="leading-none">{lang.name}</span>
+                <span className="text-[9px] opacity-40 uppercase tracking-tighter">{lang.code}</span>
               </button>
             ))}
           </motion.div>
