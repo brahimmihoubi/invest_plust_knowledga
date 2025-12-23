@@ -14,20 +14,6 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      const sections = ['about', 'members', 'experts', 'projects', 'method', 'investisor', 'partners', 'achievements'];
-      const scrollPosition = window.scrollY + 200;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const { offsetTop, offsetHeight } = element;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-      if (window.scrollY < 100) setActiveSection('hero');
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -90,12 +76,13 @@ const Navbar: React.FC = () => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'glass py-2' : 'bg-transparent py-4'
+        scrolled ? 'glass py-2' : 'bg-transparent py-3'
       } border-b border-transparent ${scrolled ? 'border-slate-200/50' : ''}`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row justify-between items-center h-auto lg:h-20 py-2 lg:py-0">
-          <div className="flex items-center justify-between w-full lg:w-auto mb-2 lg:mb-0">
+      <div className="max-w-[1400px] mx-auto px-3 sm:px-4 lg:px-6">
+        <div className="flex flex-col lg:flex-row justify-between items-center h-auto lg:h-18 py-2 lg:py-0 gap-2 lg:gap-3">
+          {/* Logo Section */}
+          <div className="flex items-center justify-between w-full lg:w-auto mb-2 lg:mb-0 flex-shrink-0">
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -104,21 +91,22 @@ const Navbar: React.FC = () => {
                 <img 
                   src="/logo.png" 
                   alt="InvestPlus" 
-                  className={`h-16 lg:h-20 w-auto scale-125 ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
+                  className={`h-16 lg:h-20 w-auto ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
                 />
               </Link>
             </motion.div>
             
-            <div className="flex items-center gap-3 lg:hidden">
+            <div className="flex items-center gap-2 lg:hidden">
               <LanguageSwitcher />
               <motion.div whileTap={{ scale: 0.9 }}>
-                <Link to="/register" className="px-3.5 py-1.5 bg-primary text-white rounded-full font-bold text-[11px] whitespace-nowrap shadow-lg shadow-primary/25">
+                <Link to="/register" className="px-3 py-1.5 bg-primary text-white rounded-full font-bold text-[10px] whitespace-nowrap shadow-lg shadow-primary/25">
                   {t('nav.join')}
                 </Link>
               </motion.div>
             </div>
           </div>
           
+          {/* Navigation and Action Buttons - Unified Animation */}
           <motion.div 
             initial={false}
             animate={{ 
@@ -131,47 +119,40 @@ const Navbar: React.FC = () => {
               pointerEvents: isHovered || !scrolled ? 'auto' : 'none',
               visibility: isHovered || !scrolled ? 'visible' : 'hidden' 
             }}
-            className="flex items-center w-full lg:w-auto overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-0"
+            className="flex items-center w-full lg:flex-1 gap-2 lg:gap-3"
           >
-            <div className="flex gap-1 lg:gap-1 items-center min-w-max pb-1 lg:pb-0 relative">
-              {navItems.map((item) => (
-                <motion.a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => handleNavClick(e, item.id)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`relative px-4 py-2 rounded-full font-bold transition-colors text-sm whitespace-nowrap z-10 ${
-                    activeSection === item.id 
-                      ? 'text-primary' 
-                      : 'text-slate-600 hover:text-slate-900'
-                  }`}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="nav-pill"
-                      className="absolute inset-0 bg-primary/10 rounded-full -z-10"
-                      transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
-                    />
-                  )}
-                </motion.a>
-              ))}
+            {/* Navigation Items */}
+            <div className="flex items-center w-full lg:flex-1 lg:justify-center overflow-x-auto no-scrollbar -mx-4 px-4 lg:mx-0 lg:px-1">
+              <div className="flex flex-wrap lg:flex-nowrap justify-center gap-x-0.5 gap-y-1 items-center min-w-max lg:min-w-0 pb-1 lg:pb-0 relative">
+                {navItems.map((item) => (
+                  <motion.a
+                    key={item.id}
+                    href={`#${item.id}`}
+                    onClick={(e) => handleNavClick(e, item.id)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="relative px-2.5 py-1.5 rounded-full font-bold transition-colors text-xs whitespace-nowrap z-10 text-slate-700 hover:text-slate-900"
+                  >
+                    {item.label}
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
+              <div className="h-5 w-px bg-slate-200/60"></div>
+              <LanguageSwitcher />
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Link to="/register" className="px-4 py-1.5 bg-primary text-white rounded-full font-bold text-xs hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 whitespace-nowrap">
+                  {t('nav.join')}
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
-
-          <div className="hidden lg:flex items-center gap-4 ms-4">
-            <div className="h-6 w-px bg-slate-200/60 me-4"></div>
-            <LanguageSwitcher />
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link to="/register" className="px-5 py-1.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-primary-dark transition-all shadow-xl shadow-primary/20 whitespace-nowrap">
-                {t('nav.join')}
-              </Link>
-            </motion.div>
-          </div>
         </div>
       </div>
       <style>{`

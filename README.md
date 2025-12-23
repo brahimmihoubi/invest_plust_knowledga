@@ -129,6 +129,3 @@ InvestPlus Knowledge is open-source software licensed under the **MIT License**.
 
 ---
 
-<!-- <div align="center">
-  Built with ❤️ for the future of Investment.
-</div> -->
