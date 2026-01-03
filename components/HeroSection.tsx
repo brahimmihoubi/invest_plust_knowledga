@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { getLatestAnnouncements } from '../services/announcementService';
@@ -11,6 +11,7 @@ const HeroSection: React.FC = () => {
   const announcements = getLatestAnnouncements();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [[page, direction], setPage] = useState([0, 0]);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   const paginate = useCallback((newDirection: number) => {
     setPage([page + newDirection, newDirection]);
@@ -40,6 +41,18 @@ const HeroSection: React.FC = () => {
     return () => clearInterval(timer);
   }, [paginate]);
 
+  // Handle scroll snap on mobile to update dots
+  const handleScroll = () => {
+    if (scrollRef.current && window.innerWidth < 768) {
+      const scrollPosition = scrollRef.current.scrollLeft;
+      const width = scrollRef.current.offsetWidth;
+      const index = Math.round(scrollPosition / width);
+      if (index !== currentIndex && index < announcements.length) {
+        setCurrentIndex(index);
+      }
+    }
+  };
+
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 100 : -100,
@@ -61,7 +74,7 @@ const HeroSection: React.FC = () => {
     <section id="hero" className="pt-32 pb-20 px-4 bg-gradient-to-b from-primary/5 via-white to-white overflow-hidden min-h-[600px] flex items-center">
       <div className="max-w-7xl mx-auto w-full relative group">
         
-        {/* Navigation Buttons (Floating) */}
+        {/* Navigation Buttons (Floating) - Desktop Only */}
         <div className={`absolute ${i18n.language === 'ar' ? 'right-0' : 'left-0'} top-1/2 -translate-y-1/2 z-20 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity`}>
           <IconButton 
             variant="glass" 
@@ -92,45 +105,84 @@ const HeroSection: React.FC = () => {
           </motion.span>
         </div>
 
-        <div className="relative h-64 md:h-48 mb-8">
-          <AnimatePresence initial={false} custom={direction} mode="wait">
-            <motion.div
-              key={page}
-              custom={direction}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{
-                x: { type: "spring", stiffness: 300, damping: 30 },
-                opacity: { duration: 0.2 }
-              }}
-              className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
-            >
-              <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight max-w-4xl tracking-tight">
-                {t(`news.announcement_${announcements[currentIndex].id}.title`)}
-              </h1>
-              <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
-                {t(`news.announcement_${announcements[currentIndex].id}.content`)}
-              </p>
-              <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary">
-                <div className="w-8 h-px bg-primary/30"></div>
-                {announcements[currentIndex].date}
-                <div className="w-8 h-px bg-primary/30"></div>
+        {/* Slides Container */}
+        <div className="relative mb-8 min-h-[250px] md:min-h-0">
+          {/* Desktop Carousel */}
+          <div className="hidden md:block h-48 relative">
+            <AnimatePresence initial={false} custom={direction} mode="wait">
+              <motion.div
+                key={page}
+                custom={direction}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 }
+                }}
+                className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
+              >
+                <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight max-w-4xl tracking-tight">
+                  {t(`news.announcement_${announcements[currentIndex].id}.title`)}
+                </h1>
+                <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                  {t(`news.announcement_${announcements[currentIndex].id}.content`)}
+                </p>
+                <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary">
+                  <div className="w-8 h-px bg-primary/30"></div>
+                  {announcements[currentIndex].date}
+                  <div className="w-8 h-px bg-primary/30"></div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          {/* Mobile Horizontally Scrollable Slides */}
+          <div 
+            ref={scrollRef}
+            onScroll={handleScroll}
+            className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 no-scrollbar pb-4 scroll-smooth"
+          >
+            {announcements.map((item) => (
+              <div 
+                key={item.id} 
+                className="w-full flex-shrink-0 snap-center px-2"
+              >
+                <div className="glass p-8 rounded-[2rem] border border-slate-200/50 text-center min-h-[300px] flex flex-col items-center justify-center">
+                  <h1 className="text-2xl font-bold text-slate-900 mb-4 leading-tight">
+                    {t(`news.announcement_${item.id}.title`)}
+                  </h1>
+                  <p className="text-base text-slate-600 leading-relaxed mb-6">
+                    {t(`news.announcement_${item.id}.content`)}
+                  </p>
+                  <div className="flex items-center gap-2 text-xs font-bold text-primary">
+                    <div className="w-4 h-px bg-primary/30"></div>
+                    {item.date}
+                    <div className="w-4 h-px bg-primary/30"></div>
+                  </div>
+                </div>
               </div>
-            </motion.div>
-          </AnimatePresence>
+            ))}
+          </div>
         </div>
 
         {/* Progress Indicators */}
-        <div className="flex justify-center gap-3 mt-12 mb-12">
+        <div className="flex justify-center gap-3 mt-8 mb-12">
           {announcements.map((_, idx) => (
             <button
               key={idx}
               onClick={() => {
-                const newDirection = idx > currentIndex ? 1 : -1;
-                setPage([page + newDirection, newDirection]);
-                setCurrentIndex(idx);
+                if (window.innerWidth < 768 && scrollRef.current) {
+                   scrollRef.current.scrollTo({
+                     left: idx * scrollRef.current.offsetWidth,
+                     behavior: 'smooth'
+                   });
+                } else {
+                  const newDirection = idx > currentIndex ? 1 : -1;
+                  setPage([page + newDirection, newDirection]);
+                  setCurrentIndex(idx);
+                }
               }}
               className={`h-2 transition-all duration-500 rounded-full ${
                 idx === currentIndex ? 'w-10 bg-primary' : 'w-2 bg-slate-200 hover:bg-slate-300'
@@ -169,31 +221,17 @@ const HeroSection: React.FC = () => {
           >
             <Link
               to="/register"
-              className="px-10 py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-2xl font-bold shadow-xl shadow-primary/25 transition-all flex items-center justify-center gap-2"
+              className="px-10 py-4 bg-gradient-to-r from-primary to-primary-dark text-white rounded-2xl font-bold shadow-xl shadow-primary/25 transition-all flex items-center justify-center gap-2 w-full"
             >
               {t('hero.join_now')}
             </Link>
           </motion.div>
         </motion.div>
-
-        {/* Mobile Navigation Buttons (Slides Only) */}
-        <div className="flex justify-center gap-4 mt-12 md:hidden">
-          <IconButton 
-            variant="secondary"
-            size="md"
-            className="!rounded-full border-none bg-gradient-to-br from-[#3FAF6C] to-[#2D8D56] shadow-lg text-white"
-            onClick={() => paginate(i18n.language === 'ar' ? 1 : -1)}
-            icon={<svg className={`w-5 h-5 ${i18n.language === 'ar' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>}
-          />
-          <IconButton 
-            variant="secondary"
-            size="md"
-            className="!rounded-full border-none bg-gradient-to-br from-[#3FAF6C] to-[#2D8D56] shadow-lg text-white"
-            onClick={() => paginate(i18n.language === 'ar' ? -1 : 1)}
-            icon={<svg className={`w-5 h-5 ${i18n.language === 'ar' ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>}
-          />
-        </div>
       </div>
+      <style>{`
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      `}</style>
     </section>
   );
 };
