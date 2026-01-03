@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
                 <img 
                   src="/logo.png" 
                   alt="InvestPlus" 
-                  className={`h-12 lg:h-16 w-auto ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
+                  className={`h-10 lg:h-16 w-auto max-w-[140px] lg:max-w-none ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
                 />
               </Link>
             </motion.div>
@@ -153,7 +153,7 @@ const Navbar: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             className="fixed top-16 left-0 w-full z-40 lg:hidden glass overflow-hidden border-b border-slate-200/50 shadow-2xl"
           >
-            <div className="px-4 pt-4 pb-8 space-y-2 bg-white/80 backdrop-blur-md">
+            <div className="px-4 pt-4 pb-8 space-y-2 bg-white/80 backdrop-blur-md max-h-[85vh] overflow-y-auto">
               {navItems.map((item) => (
                 <motion.a
                   key={item.id}

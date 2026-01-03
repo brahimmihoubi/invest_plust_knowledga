@@ -2,8 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
     <title>InvestPlus Platform</title>
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+      #root {
+        width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -11,15 +29,15 @@
           extend: {
             colors: {
               primary: {
-                DEFAULT: "#10B981", // Emerald 500 - more vibrant green
-                dark: "#064E3B",   // Emerald 900 - very deep for visibility
-                light: "#6EE7B7",  // Emerald 300 - soft highlight
+                DEFAULT: "#10B981", // Emerald 500
+                dark: "#064E3B",   // Emerald 900
+                light: "#6EE7B7",  // Emerald 300
               },
               secondary: {
-                DEFAULT: "#1F5F63", // Keeping the requested deep teal as secondary
+                DEFAULT: "#1F5F63", 
                 light: "#2D8A8F",
               },
-              accent: "#F59E0B", // Amber for call-to-actions (high visibility)
+              accent: "#F59E0B", 
             },
           },
         },
@@ -38,7 +56,6 @@
         font-family: "Cairo", sans-serif;
         line-height: 1.8;
       }
-      /* Ensure Arabic text flows naturally and overrides any hardcoded left-aligns */
       html[lang="ar"] .block, 
       html[lang="ar"] .flex-col > * {
         text-align: inherit;
@@ -53,6 +70,8 @@
         backdrop-filter: blur(12px);
         border: 1px solid rgba(255, 255, 255, 0.1);
       }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
     <script type="importmap">
       {

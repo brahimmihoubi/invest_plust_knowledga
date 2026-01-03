@@ -71,9 +71,11 @@ const LandingPage: React.FC = () => {
       <footer className="py-12 border-t border-slate-200 bg-secondary text-white">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo Section */}
-          <div className="md:col-span-1 flex flex-col items-center md:items-start space-y-4">
-            <img src="/logo.png" alt="InvestPlus" className="h-16 w-auto invert brightness-0" />
-            
+          <div className="md:col-span-1 flex flex-col items-center md:items-start space-y-6">
+            <img src="/logo.png" alt="InvestPlus" className="h-12 md:h-16 w-auto max-w-[200px] object-contain invert brightness-0" />
+            <p className="text-slate-400 text-sm text-center md:text-left leading-relaxed">
+              {t('footer.description') || 'Leading the way in AI-driven investment intelligence.'}
+            </p>
           </div>
 
           {/* Quick Links */}

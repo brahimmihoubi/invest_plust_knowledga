@@ -123,10 +123,10 @@ const HeroSection: React.FC = () => {
                 }}
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
               >
-                <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight max-w-4xl tracking-tight">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight max-w-4xl tracking-tight px-2">
                   {t(`news.announcement_${announcements[currentIndex].id}.title`)}
                 </h1>
-                <p className="text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed px-4">
                   {t(`news.announcement_${announcements[currentIndex].id}.content`)}
                 </p>
                 <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary">
