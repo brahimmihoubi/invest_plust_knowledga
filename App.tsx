@@ -18,7 +18,10 @@ const App: React.FC = () => {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/register" element={<RegisterPage type="general" />} />
+        <Route path="/register/partner" element={<RegisterPage type="partner" />} />
+        <Route path="/register/member" element={<RegisterPage type="member" />} />
+        <Route path="/register/investor" element={<RegisterPage type="investor" />} />
       </Routes>
     </HashRouter>
   );

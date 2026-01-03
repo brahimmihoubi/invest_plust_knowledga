@@ -5,14 +5,23 @@ import { RegisteredUser } from '../types';
 
 const RegistrationForm: React.FC = () => {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({ name: '', email: '', company: '' });
+  const [formData, setFormData] = useState({ 
+    name: '', 
+    email: '', 
+    company: '',
+    sector: '',
+    funding_goal: '',
+    location: '',
+    description: ''
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const newUser: RegisteredUser = {
+    const newUser: RegisteredUser & { sector: string; funding_goal: string; location: string; description: string } = {
       ...formData,
       id: Math.random().toString(36).substr(2, 9),
+      type: 'Project Owner',
       timestamp: new Date().toISOString(),
     };
 
@@ -23,7 +32,15 @@ const RegistrationForm: React.FC = () => {
     setSubmitted(true);
     setTimeout(() => {
       setSubmitted(false);
-      setFormData({ name: '', email: '', company: '' });
+      setFormData({ 
+        name: '', 
+        email: '', 
+        company: '',
+        sector: '',
+        funding_goal: '',
+        location: '',
+        description: ''
+      });
     }, 4000);
   };
 
@@ -51,7 +68,7 @@ const RegistrationForm: React.FC = () => {
               required
               type="text" 
               placeholder={t('register.name_placeholder')}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary outline-none transition-all"
+              className="input-style"
               value={formData.name}
               onChange={e => setFormData({...formData, name: e.target.value})}
             />
@@ -62,30 +79,92 @@ const RegistrationForm: React.FC = () => {
               required
               type="email" 
               placeholder={t('register.email_placeholder')}
-              className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary outline-none transition-all"
+              className="input-style"
               value={formData.email}
               onChange={e => setFormData({...formData, email: e.target.value})}
             />
           </div>
         </div>
+
         <div>
           <label className="block text-sm font-semibold text-slate-700 mb-2">{t('register.company')}</label>
           <input 
             required
             type="text" 
             placeholder={t('register.company_placeholder')}
-            className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-primary outline-none transition-all"
+            className="input-style"
             value={formData.company}
             onChange={e => setFormData({...formData, company: e.target.value})}
           />
         </div>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-2">{t('register.sector')}</label>
+            <input 
+              required
+              type="text" 
+              className="input-style"
+              value={formData.sector}
+              onChange={e => setFormData({...formData, sector: e.target.value})}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-2">{t('register.funding_goal')}</label>
+            <input 
+              required
+              type="number" 
+              className="input-style"
+              value={formData.funding_goal}
+              onChange={e => setFormData({...formData, funding_goal: e.target.value})}
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-slate-700 mb-2">{t('register.location')}</label>
+            <input 
+              required
+              type="text" 
+              className="input-style"
+              value={formData.location}
+              onChange={e => setFormData({...formData, location: e.target.value})}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label className="block text-sm font-semibold text-slate-700 mb-2">{t('register.description')}</label>
+          <textarea 
+            required
+            rows={4}
+            className="input-style resize-none"
+            value={formData.description}
+            onChange={e => setFormData({...formData, description: e.target.value})}
+          />
+        </div>
+
         <button 
           type="submit"
-          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 transform active:scale-[0.98]"
+          className="w-full py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/20 transform active:scale-[0.98] mt-4"
         >
           {t('register.button')}
         </button>
       </form>
+
+      <style>{`
+        .input-style {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border-radius: 0.75rem;
+          border: 1px solid #e2e8f0;
+          outline: none;
+          transition: all 0.2s;
+        }
+        .input-style:focus {
+          ring: 2px;
+          border-color: #0ea5e9;
+          box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+        }
+      `}</style>
     </div>
   );
 };

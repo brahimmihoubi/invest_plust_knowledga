@@ -2,6 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
+import { Link } from 'react-router-dom';
+
 const InvestisorSection: React.FC = () => {
   const { t } = useTranslation();
 
@@ -91,15 +93,15 @@ const InvestisorSection: React.FC = () => {
         >
           <h3 className="text-2xl md:text-3xl font-bold mb-4">{t('investisor.cta.title')}</h3>
           <p className="text-lg opacity-95 mb-8 max-w-2xl mx-auto">{t('investisor.cta.description')}</p>
-          <a
-            href="#hero"
+          <Link
+            to="/register/investor"
             className="inline-flex items-center gap-2 px-8 py-4 bg-white text-primary rounded-xl font-bold hover:shadow-2xl transition-all hover:scale-105"
           >
             {t('investisor.cta.button')}
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </a>
+          </Link>
         </motion.div>
       </div>
     </section>

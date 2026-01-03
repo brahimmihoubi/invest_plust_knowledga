@@ -2,6 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
+import { Link } from 'react-router-dom';
+
 const MembersSection: React.FC = () => {
   const { t } = useTranslation();
 
@@ -71,6 +73,15 @@ const MembersSection: React.FC = () => {
             </div>
           ))}
         </motion.div>
+
+        <div className="mt-12 text-center">
+          <Link
+            to="/register/member"
+            className="inline-flex items-center gap-2 px-8 py-3 bg-white border-2 border-primary text-primary rounded-xl font-bold hover:bg-primary hover:text-white transition-all shadow-md"
+          >
+            {t('nav.join')}
+          </Link>
+        </div>
       </div>
     </section>
   );

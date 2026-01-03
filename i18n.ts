@@ -213,19 +213,52 @@ const resources = {
         }
       },
       register: {
-        page_title: 'Join InvestPlus',
-        page_subtitle: 'Experience the next generation of business intelligence.',
-        title: 'Join the waitlist',
-        subtitle: 'Get early access to our AI features and join 2,000+ other companies.',
-        name: 'Full Name',
-        name_placeholder: 'Jane Doe',
-        email: 'Work Email',
-        email_placeholder: 'jane@company.com',
-        company: 'Company Name',
-        company_placeholder: 'Acme Inc.',
-        button: 'Register for Early Access',
-        success_title: 'Welcome aboard!',
-        success_message: 'Your registration was successful. We will contact you soon.'
+        page_title: 'Submit Your Project',
+        page_subtitle: 'Connect with world-class investors to fund your vision.',
+        title: 'Project Submission',
+        subtitle: 'Fill in the details to get your project reviewed by our experts.',
+        name: 'Contact Person Name',
+        name_placeholder: 'John Doe',
+        email: 'Contact Email',
+        email_placeholder: 'john@startup.com',
+        company: 'Project/Startup Name',
+        company_placeholder: 'My Innovation Inc.',
+        sector: 'Sector',
+        funding_goal: 'Funding Goal ($)',
+        location: 'Location',
+        description: 'Project Abstract',
+        button: 'Submit Project',
+        success_title: 'Project Submitted!',
+        success_message: 'Your project has been received. Our analysts will review it shortly.'
+      },
+      forms: {
+        partner: {
+          title: 'Partner Registration',
+          subtitle: 'Join our ecosystem of strategic partners.',
+          type: 'Partnership Type',
+          website: 'Company Website',
+          message: 'Message',
+          types: { strategic: 'Strategic', financial: 'Financial', technology: 'Technology', academic: 'Academic' }
+        },
+        member: {
+          title: 'Join Our Team',
+          subtitle: 'Apply as an Expert or Employee.',
+          role: 'Role',
+          specialization: 'Specialization',
+          linkedin: 'LinkedIn Profile'
+        },
+        investor: {
+          title: 'Investor Registration',
+          subtitle: 'Access exclusive investment opportunities.',
+          type: 'Investor Type',
+          portfolioSize: 'Portfolio Size',
+          sectors: 'Interested Sectors',
+          ranges: { small: '$10k - $50k', medium: '$50k - $250k', large: '$250k+' },
+          phone: 'Phone Number',
+          company_name: 'Firm/Organization Name',
+          accredited: 'I certify that I am an accredited investor',
+          sector_options: { tech: 'Technology', real_estate: 'Real Estate', energy: 'Energy', healthcare: 'Healthcare', finance: 'Finance' }
+        }
       }
     }
   },
@@ -430,19 +463,52 @@ const resources = {
         }
       },
       register: {
-        page_title: 'Rejoindre InvestPlus',
-        page_subtitle: 'Découvrez la prochaine génération de business intelligence.',
-        title: 'Rejoindre la liste d\'attente',
-        subtitle: 'Bénéficiez d\'un accès anticipé à nos fonctionnalités d\'IA.',
-        name: 'Nom complet',
+        page_title: 'Soumettre votre Projet',
+        page_subtitle: 'Connectez-vous avec des investisseurs pour financer votre vision.',
+        title: 'Soumission de Projet',
+        subtitle: 'Remplissez les détails pour faire examiner votre projet.',
+        name: 'Nom du Contact',
         name_placeholder: 'Jean Dupont',
-        email: 'Email professionnel',
-        email_placeholder: 'jean@entreprise.com',
-        company: 'Nom de l\'entreprise',
-        company_placeholder: 'Entreprise S.A.',
-        button: 'S\'inscrire',
-        success_title: 'Bienvenue à bord !',
-        success_message: 'Votre inscription a été réussie.'
+        email: 'Email de Contact',
+        email_placeholder: 'jean@startup.com',
+        company: 'Nom du Projet/Startup',
+        company_placeholder: 'Mon Innovation Inc.',
+        sector: 'Secteur',
+        funding_goal: 'Objectif de Financement ($)',
+        location: 'Localisation',
+        description: 'Résumé du Projet',
+        button: 'Soumettre le Projet',
+        success_title: 'Projet Soumis !',
+        success_message: 'Votre projet a été reçu. Nos analystes l\'examineront sous peu.'
+      },
+      forms: {
+        partner: {
+          title: 'Inscription Partenaire',
+          subtitle: 'Rejoignez notre écosystème de partenaires.',
+          type: 'Type de Partenariat',
+          website: 'Site Web',
+          message: 'Message',
+          types: { strategic: 'Stratégique', financial: 'Financier', technology: 'Technologique', academic: 'Académique' }
+        },
+        member: {
+          title: 'Rejoindre l\'équipe',
+          subtitle: 'Postulez en tant qu\'Expert ou Employé.',
+          role: 'Rôle',
+          specialization: 'Spécialisation',
+          linkedin: 'Profil LinkedIn'
+        },
+        investor: {
+          title: 'Inscription Investisseur',
+          subtitle: 'Accédez à des opportunités exclusives.',
+          type: 'Type d\'Investisseur',
+          portfolioSize: 'Taille du Portefeuille',
+          sectors: 'Secteurs d\'intérêt',
+          ranges: { small: '10k$ - 50k$', medium: '50k$ - 250k$', large: '250k$+' },
+          phone: 'Numéro de téléphone',
+          company_name: 'Nom de l\'organisation',
+          accredited: 'Je certifie être un investisseur accrédité',
+          sector_options: { tech: 'Technologie', real_estate: 'Immobilier', energy: 'Énergie', healthcare: 'Santé', finance: 'Finance' }
+        }
       }
     }
   },
@@ -647,20 +713,54 @@ const resources = {
         }
       },
       register: {
-        page_title: 'انضم إلى InvestPlus',
-        page_subtitle: 'اختبر الجيل القادم من ذكاء الأعمال.',
-        title: 'انضم إلى قائمة الانتظار',
-        subtitle: 'احصل على وصول مبكر لميزات الذكاء الاصطناعي.',
-        name: 'الاسم الكامل',
+        page_title: 'قدم مشروعك',
+        page_subtitle: 'تواصل مع مستثمرين لتمويل رؤيتك.',
+        title: 'تسجيل المشروع',
+        subtitle: 'املأ التفاصيل لتتم مراجعة مشروعك من قبل خبرائنا.',
+        name: 'اسم الشخص المسؤول',
         name_placeholder: 'محمد أحمد',
-        email: 'البريد الإلكتروني للعمل',
-        email_placeholder: 'name@company.com',
-        company: 'اسم الشركة',
-        company_placeholder: 'شركة المساهمة',
-        button: 'سجل الآن',
-        success_title: 'أهلاً بك معنا!',
-        success_message: 'تم تسجيلك بنجاح. سنتواصل معك قريبًا.'
+        email: 'البريد الإلكتروني',
+        email_placeholder: 'name@startup.com',
+        company: 'اسم المشروع/الشركة الناشئة',
+        company_placeholder: 'مشروعي المبتكر',
+        sector: 'القطاع',
+        funding_goal: 'هدف التمويل ($)',
+        location: 'الموقع',
+        description: 'ملخص المشروع',
+        button: 'إرسال المشروع',
+        success_title: 'تم إرسال المشروع!',
+        success_message: 'تم استلام مشروعك. سيقوم خبراؤنا بمراجعته قريباً.'
+      },
+      forms: {
+        partner: {
+          title: 'تسجيل الشركاء',
+          subtitle: 'انضم إلى نظام شركائنا الاستراتيجيين.',
+          type: 'نوع الشراكة',
+          website: 'الموقع الإلكتروني',
+          message: 'رسالة',
+          types: { strategic: 'استراتيجي', financial: 'مالي', technology: 'تكنولوجي', academic: 'أكاديمي' }
+        },
+        member: {
+          title: 'انضم لفريقنا',
+          subtitle: 'قدم طلبك كخبير أو موظف.',
+          role: 'الدور',
+          specialization: 'التخصص',
+          linkedin: 'ملف لينكد إن'
+        },
+        investor: {
+          title: 'تسجيل المستثمرين',
+          subtitle: 'احصل على فرص استثمارية حصرية.',
+          type: 'نوع المستثمر',
+          portfolioSize: 'حجم المحفظة',
+          sectors: 'القطاعات',
+          ranges: { small: '10 ألف - 50 ألف دولار', medium: '50 ألف - 250 ألف دولار', large: '+250 ألف دولار' },
+          phone: 'رقم الهاتف',
+          company_name: 'اسم المؤسسة',
+          accredited: 'أشهد أنني مستثمر معتمد',
+          sector_options: { tech: 'التكنولوجيا', real_estate: 'العقارات', energy: 'الطاقة', healthcare: 'الرعاية الصحية', finance: 'المالية' }
+        }
       }
+
     }
   }
 };

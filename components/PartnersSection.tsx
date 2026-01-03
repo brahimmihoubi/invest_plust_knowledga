@@ -2,6 +2,8 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
+import { Link } from 'react-router-dom';
+
 const PartnersSection: React.FC = () => {
   const { t } = useTranslation();
 
@@ -96,15 +98,15 @@ const PartnersSection: React.FC = () => {
         >
           <div className="inline-block bg-gradient-to-r from-slate-100 to-slate-50 rounded-2xl p-8 border border-slate-200">
             <p className="text-lg font-semibold text-slate-700 mb-4">{t('partners.cta.text')}</p>
-            <a
-              href="#hero"
+            <Link
+              to="/register/partner"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-primary-dark text-white rounded-xl font-bold hover:shadow-lg transition-all"
             >
               {t('partners.cta.button')}
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

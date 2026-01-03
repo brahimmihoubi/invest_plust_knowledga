@@ -28,7 +28,8 @@ export interface RegisteredUser {
   id: string;
   name: string;
   email: string;
-  company: string;
+  type?: string; 
+  company?: string;
   timestamp: string;
 }
 
@@ -38,4 +39,22 @@ export interface Announcement {
   content: string;
   date: string;
   type: 'info' | 'critical' | 'success';
+}
+
+export interface PartnerRegistration extends RegisteredUser {
+  type: string;
+  website: string;
+  message: string;
+}
+
+export interface MemberRegistration extends RegisteredUser {
+  role: string;
+  specialization: string;
+  linkedin: string;
+}
+
+export interface InvestorRegistration extends RegisteredUser {
+  type: string;
+  portfolioSize: string;
+  sectors: string[];
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const ProjectsSection: React.FC = () => {
   const { t } = useTranslation();
@@ -93,6 +94,29 @@ const ProjectsSection: React.FC = () => {
                 <div className="text-sm font-semibold text-slate-600 uppercase tracking-wide">{t(`projects.portfolio.${metric}.label`)}</div>
               </motion.div>
             ))}
+          </div>
+        </motion.div>
+
+        {/* Submit Project CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="mt-12 text-center"
+        >
+          <div className="inline-block bg-primary/5 rounded-2xl p-8 border border-primary/10">
+            <h4 className="text-xl font-bold text-slate-900 mb-2">{t('register.page_title')}</h4>
+            <p className="text-slate-600 mb-6">{t('register.page_subtitle')}</p>
+            <Link
+              to="/register"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-white rounded-xl font-bold hover:bg-primary-dark transition-all shadow-lg shadow-primary/20"
+            >
+              {t('register.button')}
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </Link>
           </div>
         </motion.div>
       </div>
