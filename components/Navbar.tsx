@@ -77,12 +77,12 @@ const Navbar: React.FC = () => {
           scrolled || isMenuOpen ? 'glass py-2' : 'bg-transparent py-4'
         } border-b border-transparent ${scrolled || isMenuOpen ? 'border-slate-200/50' : ''}`}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="max-w-[1400px] mx-auto px-0 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20 lg:h-24">
             {/* Logo Section */}
             <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               className="flex-shrink-0"
             >
               <button 
@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
                 <img 
                   src="/logo.png" 
                   alt="InvestPlus" 
-                  className={`h-10 lg:h-16 w-auto max-w-[140px] lg:max-w-none ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
+                  className={`h-20 sm:h-24 lg:h-28 w-auto block ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
                 />
               </button>
             </motion.div>
@@ -119,7 +119,7 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Mobile Header Icons */}
-            <div className="flex items-center gap-3 lg:hidden">
+            <div className="flex items-center gap-3 lg:hidden pr-4">
               <LanguageSwitcher />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
