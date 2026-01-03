@@ -32,8 +32,9 @@ The platform consists of **10 Core Modules**, each designed for maximum engageme
 
 ### 2.1. Dynamic Navigation & Hero (Entry Point)
 
+- **Premium Mobile Menu**: Responsive Hamburger menu with smooth overlay and full-screen links.
 - **Smart Navbar**: Responsive navigation with "Glassmorphism" effect, auto-hiding on scroll, and integrated Language Switcher.
-- **Dynamic Announcements**: A live, auto-playing news feed in the Hero section showcasing the latest projects and updates.
+- **Scrollable News Feed**: Horizontally scrollable (swipe-friendly) announcements in the Hero section for mobile.
 - **Call-to-Action (CTA)**: Role-based entry points for Project Owners, Investors, and Partners.
 
 ### 2.2. Specialized Registration System
@@ -83,9 +84,10 @@ The platform features a multi-tiered registration system with specialized forms 
 - **Styling**: Tailwind CSS 3.4 for utility-first, responsive design with a custom `slate` and `primary` blue palette.
 - **Data Models**: Synchronized with the KnowVest Admin Dashboard types (PortfolioSize, Specialization, InvestorType, etc.).
 
-### 3.2. User Experience (UX) & Animations
+### 3.2. User Experience (UX) & Mobile Design
 
-- **Library**: Framer Motion 12.
+- **Library**: Framer Motion 12 for high-end animations.
+- **Mobile First**: Optimized touch targets, swipeable components, and no-overflow layout logic.
 - **Behaviors**: SectionReveal triggers, Micro-interactions (hover/tap), and smooth Scroll-to-Section logic.
 
 ### 3.3. Internationalization (i18n)
@@ -103,9 +105,9 @@ The platform features a multi-tiered registration system with specialized forms 
 ├── components/           # UI Building Blocks
 │   ├── forms/            # Specialized Registration Forms (Investor, Partner, Member)
 │   ├── ui/               # Generic Components (IconButton, SectionReveal)
-│   ├── HeroSection.tsx   # Dynamic Announcements
-│   ├── ...               # All other section components
-│   └── RegistrationForm.tsx # Main Project Owner form
+│   ├── HeroSection.tsx   # Dynamic Announcements (Swipeable on Mobile)
+│   ├── Navbar.tsx        # Responsive Navigation with Hamburger Menu
+│   └── ...               # All other section components
 ├── services/             # Logic Layer
 ├── views/                # Page Layouts
 │   ├── LandingPage.tsx   # Main composition
@@ -131,4 +133,4 @@ Algiers, Algeria
 
 ---
 
-_Updated for KnowVest Plus - v2.1 (Multi-Role Support)_
+_Updated for KnowVest Plus - v2.2 (Enhanced Mobile UX)_
