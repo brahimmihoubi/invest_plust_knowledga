@@ -199,18 +199,15 @@ const resources = {
         }
       },
       news: {
-        announcement_1: {
+        announcement_2: {
           title: 'New Investment Project Launched',
           content: 'We are excited to announce our newest solar energy initiative in North Africa. Join the preliminary review now.'
-        },
-        announcement_2: {
-          title: 'Strategic Partnership with Gemini',
-          content: 'InvestPlus has officially integrated Gemini 1.5 Pro for even deeper data analysis and real-time insights.'
         },
         announcement_3: {
           title: 'Upcoming Expert Webinar',
           content: 'Don\'t miss our live session on Market Trends 2026. Register through the admin portal.'
-        }
+        },
+        watch_video: 'Watch Video'
       },
       register: {
         page_title: 'Submit Your Project',
@@ -449,18 +446,15 @@ const resources = {
         }
       },
       news: {
-         announcement_1: {
+        announcement_2: {
           title: 'Nouveau projet d\'investissement lancé',
           content: 'Nous sommes ravis d\'annoncer notre nouvelle initiative d\'énergie solaire en Afrique du Nord. Rejoignez l\'examen préliminaire maintenant.'
-        },
-        announcement_2: {
-          title: 'Partenariat stratégique avec Gemini',
-          content: 'InvestPlus a officiellement intégré Gemini 1.5 Pro pour une analyse de données encore plus approfondie.'
         },
         announcement_3: {
           title: 'Webinaire d\'experts à venir',
           content: 'Ne manquez pas notre session en direct sur les tendances du marché 2026. Inscrivez-vous via le portail admin.'
-        }
+        },
+        watch_video: 'Regarder la vidéo'
       },
       register: {
         page_title: 'Soumettre votre Projet',
@@ -699,18 +693,15 @@ const resources = {
         }
       },
       news: {
-        announcement_1: {
+        announcement_2: {
           title: 'إطلاق مشروع استثماري جديد',
           content: 'يسعدنا الإعلان عن أحدث مبادرتنا للطاقة الشمسية في شمال أفريقيا. انضم إلى المراجعة الأولية الآن.'
-        },
-        announcement_2: {
-          title: 'شراكة استراتيجية مع Gemini',
-          content: 'دمجت InvestPlus رسميًا Gemini 1.5 Pro لتحليل أعمق للبيانات ورؤى فورية.'
         },
         announcement_3: {
           title: 'ندوة خبراء قادمة',
           content: 'لا تفوت جلستنا المباشرة حول اتجاهات السوق 2026. سجل عبر بوابة المسؤول.'
-        }
+        },
+        watch_video: 'مشاهدة الفيديو'
       },
       register: {
         page_title: 'قدم مشروعك',

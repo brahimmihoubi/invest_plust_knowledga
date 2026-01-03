@@ -2,18 +2,12 @@ import { Announcement } from '../types';
 
 export const announcements: Announcement[] = [
   {
-    id: '1',
+    id: '2',
     title: 'New Investment Project Launched',
     content: 'We are excited to announce our newest solar energy initiative in North Africa. Join the preliminary review now.',
     date: '2025-12-20',
-    type: 'success'
-  },
-  {
-    id: '2',
-    title: 'Strategic Partnership with Gemini',
-    content: 'InvestPlus has officially integrated Gemini 1.5 Pro for even deeper data analysis and real-time insights.',
-    date: '2025-12-18',
-    type: 'info'
+    type: 'success',
+    videoUrl: 'https://youtu.be/kQo1C-04Vlw'
   },
   {
     id: '3',

@@ -39,6 +39,7 @@ export interface Announcement {
   content: string;
   date: string;
   type: 'info' | 'critical' | 'success';
+  videoUrl?: string;
 }
 
 export interface PartnerRegistration extends RegisteredUser {
