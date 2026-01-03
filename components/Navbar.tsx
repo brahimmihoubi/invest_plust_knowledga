@@ -25,40 +25,34 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(false);
   }, [location.pathname]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: id === 'hero' ? 0 : offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  const handleNavClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
     
     if (location.pathname === '/') {
-      const element = document.getElementById(id);
-      if (element) {
-        const offset = 80;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
-
-        window.scrollTo({
-          top: id === 'hero' ? 0 : offsetPosition,
-          behavior: 'smooth'
-        });
-      }
+      scrollToSection(id);
     } else {
       navigate('/');
+      // Wait for navigation to complete and content to mount
       setTimeout(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          const offset = 80;
-          const bodyRect = document.body.getBoundingClientRect().top;
-          const elementRect = element.getBoundingClientRect().top;
-          const elementPosition = elementRect - bodyRect;
-          const offsetPosition = elementPosition - offset;
-          window.scrollTo({
-            top: id === 'hero' ? 0 : offsetPosition,
-            behavior: 'smooth'
-          });
-        }
-      }, 100);
+        scrollToSection(id);
+      }, 300);
     }
   };
 
@@ -91,32 +85,35 @@ const Navbar: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className="flex-shrink-0"
             >
-              <Link to="/" onClick={(e) => handleNavClick(e, 'hero')} className="flex items-center">
+              <button 
+                onClick={(e) => handleNavClick(e, 'hero')} 
+                className="flex items-center"
+              >
                 <img 
                   src="/logo.png" 
                   alt="InvestPlus" 
                   className={`h-10 lg:h-16 w-auto max-w-[140px] lg:max-w-none ${i18n.language === 'ar' ? 'origin-right' : 'origin-left'}`} 
                 />
-              </Link>
+              </button>
             </motion.div>
             
             {/* Desktop Navigation */}
             <div className="hidden lg:flex items-center gap-1 xl:gap-2">
               {navItems.map((item) => (
-                <motion.a
+                <button
                   key={item.id}
-                  href={`#${item.id}`}
                   onClick={(e) => handleNavClick(e, item.id)}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="px-3 py-2 rounded-full font-bold transition-colors text-sm text-slate-700 hover:text-slate-900 hover:bg-slate-100/50"
+                  className="px-3 py-2 rounded-full font-bold transition-all text-sm text-slate-700 hover:text-primary hover:bg-primary/5"
                 >
                   {item.label}
-                </motion.a>
+                </button>
               ))}
               <div className="h-6 w-px bg-slate-200 mx-2"></div>
               <LanguageSwitcher />
-              <Link to="/register" className="ml-2 px-5 py-2.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-primary-dark transition-all shadow-lg shadow-primary/20">
+              <Link 
+                to="/register" 
+                className="ml-2 px-5 py-2.5 bg-primary text-white rounded-full font-bold text-sm hover:bg-primary-dark transition-all shadow-lg shadow-primary/20"
+              >
                 {t('nav.join')}
               </Link>
             </div>
@@ -126,7 +123,7 @@ const Navbar: React.FC = () => {
               <LanguageSwitcher />
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-slate-600 hover:text-primary transition-colors"
+                className="p-2 text-slate-600 hover:text-primary transition-colors bg-slate-100 rounded-xl"
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? (
@@ -147,34 +144,51 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <AnimatePresence>
         {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="fixed top-16 left-0 w-full z-40 lg:hidden glass overflow-hidden border-b border-slate-200/50 shadow-2xl"
-          >
-            <div className="px-4 pt-4 pb-8 space-y-2 bg-white/80 backdrop-blur-md max-h-[85vh] overflow-y-auto">
-              {navItems.map((item) => (
-                <motion.a
-                  key={item.id}
-                  href={`#${item.id}`}
-                  onClick={(e) => handleNavClick(e, item.id)}
-                  whileTap={{ scale: 0.98 }}
-                  className="block px-4 py-3 rounded-2xl font-bold text-lg text-slate-800 hover:bg-primary/10 hover:text-primary transition-all underline-offset-4"
-                >
-                  {item.label}
-                </motion.a>
-              ))}
-              <div className="pt-4 mt-4 border-t border-slate-100">
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+              className="fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 lg:hidden"
+            />
+            
+            {/* Menu Content */}
+            <motion.div
+              initial={{ opacity: 0, x: '100%' }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 h-full w-[80%] sm:w-[60%] z-50 lg:hidden bg-white shadow-2xl flex flex-col pt-24 px-6 overflow-y-auto"
+            >
+              <div className="flex flex-col gap-2">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={(e) => handleNavClick(e, item.id)}
+                    className="flex w-full items-center px-6 py-4 rounded-2xl font-bold text-lg text-slate-800 hover:bg-primary/10 hover:text-primary transition-all text-start"
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+              
+              <div className="mt-8 pt-8 border-t border-slate-100">
                 <Link 
                   to="/register" 
+                  onClick={() => setIsMenuOpen(false)}
                   className="block w-full text-center py-4 bg-primary text-white rounded-2xl font-bold text-lg shadow-xl shadow-primary/25"
                 >
                   {t('nav.join')}
                 </Link>
+                
+                <p className="mt-8 text-center text-slate-400 text-xs">
+                  © 2026 KnowVest Plus. All rights reserved.
+                </p>
               </div>
-            </div>
-          </motion.div>
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </>
