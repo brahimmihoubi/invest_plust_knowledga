@@ -1,131 +1,171 @@
 <div align="center">
-  <table>
-    <tr>
-      <td bgcolor="white" align="center">
-        <img src="public/logo2.jpeg" width="200" alt="InvestPlus Logo" />
-      </td>
-    </tr>
-  </table>
+  <img src="public/logo.png" width="250" alt="KnowVest Plus Logo" />
   
-  # InvestPlus Knowledge Platform
-
-[![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
-[![Vite](https://img.shields.io/badge/Vite-6-purple.svg)](https://vitejs.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
-[![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-pink.svg)](https://www.framer.com/motion/)
-[![i18next](https://img.shields.io/badge/Internationalization-i18next-brightgreen.svg)](https://www.i18next.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg)](https://tailwindcss.com/)
-
+  # KnowVest Plus (formerly InvestPlus)
+  ### Next-Generation Investment & Business Intelligence Platform
+  
+  [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
+  [![Vite](https://img.shields.io/badge/Vite-6-purple.svg)](https://vitejs.dev/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
+  [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12-pink.svg)](https://www.framer.com/motion/)
+  [![i18next](https://img.shields.io/badge/Internationalization-i18next-brightgreen.svg)](https://www.i18next.com/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC.svg)](https://tailwindcss.com/)
 </div>
 
 ---
 
-## Overview
+# Software Requirements Specification (SRS) - Version 2.0
 
-**InvestPlus Knowledge** is a next-generation Business Intelligence and Investment platform. Developed with a focus on high-end aesthetics and cutting-edge performance, it serves as a central hub for investors and businesses to gain AI-driven insights, generate high-impact content, and manage investment projects with precision.
+## 1. Executive Summary
 
-The platform is designed to be **dynamic, interactive, and globally accessible**, featuring full multi-language support and a premium user experience.
+**KnowVest Plus** is a premium, AI-driven investment platform designed to bridge the gap between complex data analysis and actionable business strategies. The platform has undergone a major transformation to provide a world-class user experience, featuring dynamic content delivery, full multi-language support (English, French, Arabic), and a responsive, mobile-first interface.
 
----
-
-## Pro Features
-
-### 1. Dynamic Announcement Hub
-
-The Hero section is transformed into a live news feed.
-
-- **Automated Slider**: Smooth 8-second auto-play cycles.
-- **Manual Navigation**: Vibrant green gradient buttons with spring-based hover effects.
-- **Directional Transitions**: Announcements slide in/out based on navigation direction for an organic feel.
-- **Fully Localized**: Every announcement is instantly translatable.
-
-### 2. Global Reach (i18n)
-
-- **Three Core Languages**: Full support for **English**, **French**, and **Arabic**.
-- **Adaptive Layouts**: Automatic **RTL (Right-to-Left)** switching for Arabic.
-- **Translated Metadata**: Everything from section titles to footer links and news content is localized.
-
-### 3. Premium Design & Animations
-
-- **Smart Navbar**: Intelligently hides on scroll to maximize screen space; reveals elegantly with a blur-scale effect on hover.
-- **Section Reveal**: Sophisticated "Blur-to-Clear" entrance animations as you scroll down the page.
-- **Micro-interactions**: Icon buttons that subtly "pull" toward the cursor for a tactile feel.
-- **Emerald Palette**: A custom-crafted design system using Emerald, Deep Teal, and Amber highlights for maximum visibility.
+This document outlines the complete system architecture, feature set, and technical specifications of the updated platform.
 
 ---
 
-## Technology Stack
+## 2. System Modules & Features
 
-- **Framework**: React 19 (Latest) + Vite
-- **Language**: TypeScript (Strict Mode)
-- **Styling**: Tailwind CSS with custom Design Tokens
-- **Animations**: Framer Motion (Orchestration & Spring Physics)
-- **AI Backend**: Google Gemini AI (Vertex AI/AI Studio)
-- **State & I18n**: i18next & react-i18next
-- **Charts**: Recharts
+The platform consists of **10 Core Modules**, each designed for maximum engagement and clarity.
+
+### 2.1. Dynamic Navigation & Hero (Entry Point)
+
+- **Smart Navbar**: Responsive navigation with "Glassmorphism" effect, auto-hiding on scroll, and integrated Language Switcher.
+- **Dynamic Announcements**: A live, auto-playing news feed in the Hero section showcasing the latest projects and updates.
+- **Call-to-Action (CTA)**: Prominent "Join the Waitlist" and "Know More" interactions.
+
+### 2.2. About Module (`AboutSection`)
+
+- **Statistics Dashboard**: Visual display of key metrics:
+  - 15+ Years Experience
+  - 500+ Projects Completed
+  - 10K+ Active Investors
+  - 45+ Countries Served
+- **Core Values**: "Deep Expertise", "Cutting-Edge Technology", "24/7 Support".
+- **Mission Statement**: Dedicated mission card with gradient aesthetics.
+
+### 2.3. Team & Leadership (`MembersSection`)
+
+- **Role Categories**: Organized display of Leadership, Analysts, Advisors, and Operations teams.
+- **Team Values**: Innovation, Excellence, and Integrity visualized with custom iconography.
+- **Interactive Cards**: Hover-responsive team cards displaying member counts.
+
+### 2.4. Expert Network (`ExpertsSection`)
+
+- **Specialization Grid**: Showcasing expertise in Finance, Technology, Legal, Market Analysis, Sustainability, and Real Estate.
+- **Credential Verification**: displaying Certifications, Publications, and Industry Awards to build trust.
+
+### 2.5. Investment Projects (`ProjectsSection`)
+
+- **Sector Categorization**: Renewable Energy, AI/Tech, Real Estate, Healthcare, Infrastructure, AgriTech.
+- **Performance Metrics**: Real-time display of ROI percentages (e.g., 18-25% for Renewable) and success rates.
+- **Portfolio Overview**: Total Value ($2.5B+), Active Projects count, and Average Returns.
+
+### 2.6. Methodology (`MethodSection`)
+
+- **5-Step Process**: A visual journey from "Data Analysis" to "Optimization".
+- **Interactive Visualization**: Animated connecting lines and step badges.
+- **Process Transparency**: Clear explanation of how the platform turns data into strategy.
+
+### 2.7. Investor Tools (`InvestisorSection`)
+
+- **Tool Suite**: Analytics Dashboard, Portfolio Management, AI Insights, Detailed Reports.
+- **Investor Benefits**: Transparency, Bank-Level Security, Flexibility, Dedicated Support.
+
+### 2.8. Partnerships (`PartnersSection`)
+
+- **Partner Ecosystem**: Strategic, Financial, Technology, and Academic partners.
+- **Collaboration Benefits**: Global Network access, Shared Resources, Accelerated Growth.
+
+### 2.9. Achievements & Impact (`AchievementsSection`)
+
+- **Timeline**: A chronological journey from 2010 to 2025.
+- **Global Impact**: Metrics on Capital Deployed, Jobs Created, and CO2 Reduced.
+- **Awards & Recognition**: Industry accolades for Innovation and Leadership.
+
+### 2.10. Footer & Contact
+
+- **Contact Information**:
+  - 📞 **Phones**: 0770 58 77 88 | 0777 87 80 85
+  - 📍 **Address**: Al-Amal Cooperative, Zeralda, Algiers (Localized)
+  - ✉️ **Email**: Info@innov.Plus
+- **Quick Links**: Privacy, Terms, Status.
 
 ---
 
-## Getting Started
+## 3. Technical Specifications
 
-### Prerequisites
+### 3.1. Frontend Architecture
 
-- **Node.js**: v18.0.0 or higher
-- **NPM**: v9.0.0 or higher
+- **Core Framework**: React 19 with TypeScript for type-safe, component-based architecture.
+- **Build Tool**: Vite 6.0 for lightning-fast HMR (Hot Module Replacement) and optimized production builds.
+- **Styling Engine**: Tailwind CSS 3.4 for utility-first, responsive design with a custom `slate` and `primary` blue color palette.
 
-### Installation
+### 3.2. User Experience (UX) & Animations
 
-1.  **Clone the platform:**
+- **Library**: Framer Motion 12.
+- **Behaviors**:
+  - **Scroll Reveal**: Sections fade in and slide up as the user scrolls (`SectionReveal`).
+  - **Micro-interactions**: Buttons scale on tap/hover; cards lift with shadow depth.
+  - **Transitions**: Smooth page scrolling and dynamic content switching.
 
-    ```bash
-    git clone https://github.com/brahimmihoubi/invest_plust_knowledga.git
-    cd invest_plust_knowledga
-    ```
+### 3.3. Internationalization (i18n)
 
-2.  **Install dependencies:**
+- **Library**: `i18next` & `react-i18next`.
+- **Supported Languages**:
+  - 🇬🇧 English (Default)
+  - 🇫🇷 French
+  - 🇩🇿 Arabic (with **RTL** support)
+- **Features**:
+  - Dynamic `dir="rtl"` attribute switching.
+  - 100% Content Coverage (Navbar to Footer).
+  - Browser language detection.
 
-    ```bash
-    npm install
-    ```
+### 3.4. Responsiveness
 
-3.  **Configure AI:**
-    Create a `.env` file in the root:
-
-    ```env
-    VITE_GEMINI_API_KEY=your_google_gemini_api_key
-    ```
-
-4.  **Launch:**
-    ```bash
-    npm run dev
-    ```
+- **Design Strategy**: Mobile-First.
+- **Breakpoints**:
+  - **Mobile**: Single-column, touch-optimized (p-4 padding).
+  - **Tablet**: Two-column grids, balanced spacing.
+  - **Desktop**: Multi-column layouts (up to 5 columns), hover effects enabled.
 
 ---
 
-## Project Architecture
+## 4. Project Structure
 
 ```text
-├── components/
-│   ├── ui/              # Atom-level components (IconButton, SectionReveal)
-│   ├── Navbar/          # Smart navigation logic
-│   └── Sections/        # Modular landing page segments
-├── services/
-│   └── announcementService.ts # News data management
-├── views/               # Page-level compositions
-├── i18n/                # Language resources (EN, FR, AR)
-├── types/               # Unified TypeScript interfaces
-└── public/              # Optimized static assets
+/
+├── components/           # UI Building Blocks
+│   ├── ui/               # Generic Components (IconButton, SectionReveal)
+│   ├── HeroSection.tsx   # Dynamic Announcements
+│   ├── AboutSection.tsx  # Stats & Mission
+│   ├── MembersSection.tsx# Team & Values
+│   ├── ...               # All other sections
+│   ├── Navbar.tsx        # Navigation & Lang Switcher
+│   └── RegistrationForm.tsx
+├── services/             # Logic Layer
+│   └── announcementService.ts
+├── views/                # Page Layouts
+│   └── LandingPage.tsx   # Main composition
+├── i18n.ts               # Translation Configuration & Dictionary
+├── public/               # Static Assets
+│   └── logo.png          # New KnowVest Plus Identity
+└── App.tsx               # Root Component & Routing
 ```
 
 ---
 
-## Contributing
+## 5. Contact & Support
 
-We are constantly refining the InvestPlus experience. Feel free to open issues or submit PRs to enhance the platform's capabilities.
+For technical inquiries or partnership opportunities:
 
-## License
+**KnowVest Plus HQ**  
+Coopérative Al-Amal, Zéralda  
+Algiers, Algeria
 
-InvestPlus Knowledge is open-source software licensed under the **MIT License**.
+- **Email**: Info@innov.Plus
+- **Phone**: +213 770 58 77 88
 
 ---
 
+_Generated for KnowVest Plus - 2024_
