@@ -19,5 +19,5 @@ export const announcements: Announcement[] = [
 ];
 
 export const getLatestAnnouncements = () => {
-  return announcements.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return [...announcements].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };

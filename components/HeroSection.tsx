@@ -11,6 +11,7 @@ const HeroSection: React.FC = () => {
   const announcements = getLatestAnnouncements();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [[page, direction], setPage] = useState([0, 0]);
+  const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const paginate = useCallback((newDirection: number) => {
@@ -36,10 +37,12 @@ const HeroSection: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      paginate(1);
+      if (!isPaused) {
+        paginate(1);
+      }
     }, 8000);
     return () => clearInterval(timer);
-  }, [paginate]);
+  }, [paginate, isPaused]);
 
   // Handle scroll snap on mobile to update dots
   const handleScroll = () => {
@@ -108,7 +111,11 @@ const HeroSection: React.FC = () => {
         {/* Slides Container */}
         <div className="relative mb-8 min-h-[250px] md:min-h-0">
           {/* Desktop Carousel */}
-          <div className="hidden md:block h-48 relative">
+          <div 
+            className="hidden md:block h-48 relative"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <AnimatePresence initial={false} custom={direction} mode="wait">
               <motion.div
                 key={page}
@@ -142,7 +149,9 @@ const HeroSection: React.FC = () => {
           <div 
             ref={scrollRef}
             onScroll={handleScroll}
-            className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 no-scrollbar pb-4 scroll-smooth"
+            onTouchStart={() => setIsPaused(true)}
+            onTouchEnd={() => setIsPaused(false)}
+            className="md:hidden flex overflow-x-auto snap-x snap-mandatory gap-4 no-scrollbar pb-4 scroll-smooth overscroll-x-contain"
           >
             {announcements.map((item) => (
               <div 
