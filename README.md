@@ -4,6 +4,8 @@
   # KnowVest Plus 
   ### Next-Generation Investment & Business Intelligence Platform
   
+  **🌐 Live Website:** [knowvestplus.netlify.app](https://knowvestplus.netlify.app/)
+  
   [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
   [![Vite](https://img.shields.io/badge/Vite-6-purple.svg)](https://vitejs.dev/)
   [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
