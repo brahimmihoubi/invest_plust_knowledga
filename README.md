@@ -1,7 +1,7 @@
 <div align="center">
   <img src="public/logo.png" width="250" alt="KnowVest Plus Logo" />
   
-  # KnowVest Plus (formerly InvestPlus)
+  # KnowVest Plus 
   ### Next-Generation Investment & Business Intelligence Platform
   
   [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
@@ -14,7 +14,7 @@
 
 ---
 
-# Software Requirements Specification (SRS) - Version 2.0
+# Software Requirements Specification 
 
 ## 1. Executive Summary
 
