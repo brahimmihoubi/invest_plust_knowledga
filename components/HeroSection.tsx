@@ -49,8 +49,10 @@ const HeroSection: React.FC = () => {
     if (scrollRef.current && window.innerWidth < 768) {
       const scrollPosition = scrollRef.current.scrollLeft;
       const width = scrollRef.current.offsetWidth;
-      const index = Math.round(scrollPosition / width);
-      if (index !== currentIndex && index < announcements.length) {
+      // critical fix: Math.abs handles negative scroll values in RTL browsers
+      // bounds check prevents accessing undefined index (which crashed the app)
+      const index = Math.round(Math.abs(scrollPosition) / width);
+      if (index !== currentIndex && index >= 0 && index < announcements.length) {
         setCurrentIndex(index);
       }
     }
@@ -131,14 +133,14 @@ const HeroSection: React.FC = () => {
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
               >
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight max-w-4xl tracking-tight px-2">
-                  {t(`news.announcement_${announcements[currentIndex].id}.title`)}
+                  {t(`news.announcement_${(announcements[currentIndex] || announcements[0]).id}.title`)}
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed px-4">
-                  {t(`news.announcement_${announcements[currentIndex].id}.content`)}
+                  {t(`news.announcement_${(announcements[currentIndex] || announcements[0]).id}.content`)}
                 </p>
                 <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary">
                   <div className="w-8 h-px bg-primary/30"></div>
-                  {announcements[currentIndex].date}
+                  {(announcements[currentIndex] || announcements[0]).date}
                   <div className="w-8 h-px bg-primary/30"></div>
                 </div>
               </motion.div>
@@ -228,7 +230,7 @@ const HeroSection: React.FC = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            {announcements[currentIndex].videoUrl ? (
+            {(announcements[currentIndex] || announcements[0]).videoUrl ? (
               <a
                 href={announcements[currentIndex].videoUrl}
                 target="_blank"
