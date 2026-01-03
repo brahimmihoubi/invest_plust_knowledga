@@ -1,0 +1,302 @@
+// This file contains ONLY the new translation keys to be added to i18n.ts
+// These should be merged into the existing translation objects
+
+// MEMBERS SECTION - Add after existing members.content
+members: {
+  badge: 'Our Team',
+  title: 'Members',
+  content: 'Our team consists of elite talents committed to excellence and innovation in everything we provide.',
+  roles: {
+    leadership: {
+      title: 'Leadership Team',
+      description: 'Visionary leaders driving strategic direction and growth',
+      count: '12+'
+    },
+    analysts: {
+      title: 'Financial Analysts',
+      description: 'Expert analysts providing deep market insights',
+      count: '35+'
+    },
+    advisors: {
+      title: 'Strategic Advisors',
+      description: 'Seasoned advisors with global expertise',
+      count: '20+'
+    },
+    operations: {
+      title: 'Operations Team',
+      description: 'Dedicated professionals ensuring seamless execution',
+      count: '45+'
+    }
+  },
+  values: {
+    excellence: {
+      icon: '⭐',
+      title: 'Excellence',
+      description: 'Committed to delivering exceptional results in every project'
+    },
+    innovation: {
+      icon: '💡',
+      title: 'Innovation',
+      description: 'Embracing cutting-edge solutions and creative thinking'
+    },
+    integrity: {
+      icon: '🤝',
+      title: 'Integrity',
+      description: 'Operating with transparency, honesty, and ethical standards'
+    }
+  }
+},
+
+// EXPERTS SECTION - Replace existing experts object
+experts: {
+  badge: 'Our Expertise',
+  title: 'Experts',
+  content: 'We take pride in a wide network of international consultants and experts who provide precise strategic insights.',
+  areas: {
+    finance: {
+      title: 'Financial Experts',
+      description: 'Specialists in investment banking, portfolio management, and financial planning',
+      count: '25+ Experts'
+    },
+    technology: {
+      title: 'Technology Consultants',
+      description: 'Tech innovators driving digital transformation and AI integration',
+      count: '18+ Consultants'
+    },
+    legal: {
+      title: 'Legal Advisors',
+      description: 'Expert lawyers ensuring compliance and protecting your interests',
+      count: '15+ Advisors'
+    },
+    market: {
+      title: 'Market Analysts',
+      description: 'Analysts providing real-time market intelligence and trends',
+      count: '30+ Analysts'
+    },
+    sustainability: {
+      title: 'Sustainability Experts',
+      description: 'Specialists in ESG and sustainable investment strategies',
+      count: '12+ Experts'
+    },
+    realestate: {
+      title: 'Real Estate Specialists',
+      description: 'Property experts with deep knowledge of global markets',
+      count: '20+ Specialists'
+    }
+  },
+  credentials: {
+    title: 'Expert Credentials',
+    description: 'Our experts hold prestigious certifications and have proven track records',
+    certifications: { value: '200+', label: 'Professional Certifications' },
+    publications: { value: '150+', label: 'Research Publications' },
+    awards: { value: '50+', label: 'Industry Awards' },
+    experience: { value: '500+', label: 'Years Combined Experience' }
+  }
+},
+
+// PROJECTS SECTION - Replace existing projects object
+projects: {
+  badge: 'Investment Opportunities',
+  title: 'Investment Projects',
+  content: 'We offer revolutionary opportunities in sustainable energy, technology, and real estate, carefully selected to ensure the best returns.',
+  categories: {
+    renewable: {
+      title: 'Renewable Energy',
+      description: 'Solar, wind, and clean energy projects driving sustainable future',
+      count: '45 Active Projects',
+      roi: 'ROI: 18-25%'
+    },
+    technology: {
+      title: 'Technology & AI',
+      description: 'Cutting-edge tech startups and AI-driven innovations',
+      count: '32 Active Projects',
+      roi: 'ROI: 22-35%'
+    },
+    realestate: {
+      title: 'Real Estate',
+      description: 'Premium commercial and residential development projects',
+      count: '28 Active Projects',
+      roi: 'ROI: 15-20%'
+    },
+    healthcare: {
+      title: 'Healthcare',
+      description: 'Medical facilities and healthcare technology investments',
+      count: '18 Active Projects',
+      roi: 'ROI: 16-22%'
+    },
+    infrastructure: {
+      title: 'Infrastructure',
+      description: 'Large-scale infrastructure and urban development',
+      count: '22 Active Projects',
+      roi: 'ROI: 14-19%'
+    },
+    agriculture: {
+      title: 'AgriTech',
+      description: 'Smart farming and agricultural technology solutions',
+      count: '15 Active Projects',
+      roi: 'ROI: 17-24%'
+    }
+  },
+  portfolio: {
+    title: 'Portfolio Performance',
+    description: 'Our investment portfolio demonstrates consistent growth and strong returns',
+    total_value: { value: '$2.5B+', label: 'Total Portfolio Value' },
+    active_projects: { value: '160+', label: 'Active Projects' },
+    avg_return: { value: '21.5%', label: 'Average Annual Return' },
+    success_rate: { value: '94%', label: 'Success Rate' }
+  }
+},
+
+// INVESTOR SECTION - Replace existing investisor object
+investisor: {
+  badge: 'For Investors',
+  title: 'Investor',
+  content: 'We provide investors with the tools and data necessary to make informed decisions that enhance their investment portfolios.',
+  tools: {
+    analytics: {
+      title: 'Advanced Analytics',
+      description: 'Real-time data analysis and market intelligence dashboards'
+    },
+    portfolio: {
+      title: 'Portfolio Management',
+      description: 'Comprehensive tools to track and optimize your investments'
+    },
+    insights: {
+      title: 'AI-Powered Insights',
+      description: 'Intelligent recommendations based on market trends and data'
+    },
+    reports: {
+      title: 'Detailed Reports',
+      description: 'In-depth performance reports and investment analysis'
+    }
+  },
+  benefits: {
+    transparency: {
+      title: 'Full Transparency',
+      description: 'Complete visibility into all investments, fees, and performance metrics with real-time updates'
+    },
+    security: {
+      title: 'Bank-Level Security',
+      description: 'Your investments are protected with enterprise-grade security and insurance coverage'
+    },
+    flexibility: {
+      title: 'Investment Flexibility',
+      description: 'Choose from diverse investment options and customize your portfolio to match your goals'
+    },
+    support: {
+      title: 'Dedicated Support',
+      description: 'Personal investment advisors available 24/7 to guide your investment journey'
+    }
+  },
+  cta: {
+    title: 'Ready to Start Investing?',
+    description: 'Join thousands of successful investors who trust us with their financial future',
+    button: 'Get Started Today'
+  }
+},
+
+// PARTNERS SECTION - Replace existing partners object
+partners: {
+  badge: 'Partnerships',
+  title: 'Partners',
+  content: 'We believe in the power of strategic partnerships to build a prosperous and inclusive economic future.',
+  types: {
+    strategic: {
+      title: 'Strategic Partners',
+      description: 'Long-term collaborations driving mutual growth',
+      count: '50+ Partners'
+    },
+    financial: {
+      title: 'Financial Institutions',
+      description: 'Leading banks and financial service providers',
+      count: '35+ Institutions'
+    },
+    technology: {
+      title: 'Technology Partners',
+      description: 'Innovative tech companies powering our platform',
+      count: '28+ Companies'
+    },
+    academic: {
+      title: 'Academic Partners',
+      description: 'Universities and research institutions',
+      count: '15+ Institutions'
+    }
+  },
+  benefits: {
+    title: 'Partnership Benefits',
+    description: 'Collaborate with us to unlock new opportunities and accelerate growth',
+    network: {
+      icon: '🌐',
+      title: 'Global Network',
+      description: 'Access to our extensive network of investors, experts, and industry leaders'
+    },
+    resources: {
+      icon: '📚',
+      title: 'Shared Resources',
+      description: 'Leverage our technology, research, and market intelligence'
+    },
+    growth: {
+      icon: '📈',
+      title: 'Accelerated Growth',
+      description: 'Joint ventures and co-investment opportunities for rapid expansion'
+    }
+  },
+  cta: {
+    text: 'Interested in partnering with us?',
+    button: 'Explore Partnership Opportunities'
+  }
+},
+
+// ACHIEVEMENTS SECTION - Replace existing achievements object
+achievements: {
+  badge: 'Our Success',
+  title: 'Achievements',
+  content: 'A proven track record of success in managing major portfolios and launching large-scale projects across continents.',
+  timeline: {
+    title: 'Our Journey',
+    '2010': {
+      title: 'Company Founded',
+      description: 'Started with a vision to revolutionize investment management'
+    },
+    '2015': {
+      title: 'Global Expansion',
+      description: 'Expanded operations to 20+ countries across 4 continents'
+    },
+    '2020': {
+      title: 'Billion Dollar Milestone',
+      description: 'Reached $1B+ in assets under management'
+    },
+    '2025': {
+      title: 'Industry Leader',
+      description: 'Recognized as a top investment platform globally'
+    }
+  },
+  awards: {
+    title: 'Awards & Recognition',
+    description: 'Honored by leading industry organizations for excellence and innovation',
+    innovation: {
+      title: 'Innovation Award',
+      year: '2024'
+    },
+    excellence: {
+      title: 'Excellence in Finance',
+      year: '2023'
+    },
+    sustainability: {
+      title: 'Sustainability Leader',
+      year: '2024'
+    },
+    leadership: {
+      title: 'Best Leadership Team',
+      year: '2023'
+    }
+  },
+  impact: {
+    title: 'Our Global Impact',
+    description: 'Creating positive change through responsible investment and sustainable growth',
+    capital: { value: '$2.5B+', label: 'Capital Deployed' },
+    jobs: { value: '50K+', label: 'Jobs Created' },
+    communities: { value: '200+', label: 'Communities Impacted' },
+    sustainability: { value: '1M+', label: 'Tons CO₂ Reduced' }
+  }
+}

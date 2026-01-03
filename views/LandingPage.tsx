@@ -68,22 +68,46 @@ const LandingPage: React.FC = () => {
       </SectionReveal>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-slate-200 bg-secondary">
-        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 items-center gap-8">
-          {/* Logo at the start */}
-          <div className="flex justify-center md:justify-start">
+      <footer className="py-12 border-t border-slate-200 bg-secondary text-white">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* Logo Section */}
+          <div className="md:col-span-1 flex flex-col items-center md:items-start space-y-4">
             <img src="/logo.png" alt="InvestPlus" className="h-16 w-auto invert brightness-0" />
-          </div>
-          
-          {/* Links and Switcher in the middle */}
-          <div className="flex flex-wrap justify-center gap-8 text-white/80 text-sm font-bold items-center min-w-max">
-            <a href="#" className="hover:text-white transition-colors">{t('footer.privacy')}</a>
-            <a href="#" className="hover:text-white transition-colors">{t('footer.terms')}</a>
-            <a href="#" className="hover:text-accent transition-colors">{t('footer.status')}</a>
+            
           </div>
 
-          {/* Empty div to balance the grid for perfect centering of the middle part */}
-          <div className="hidden md:block"></div>
+          {/* Quick Links */}
+          <div className="md:col-span-1 flex flex-col items-center md:items-start space-y-4">
+            <h4 className="font-bold text-lg text-primary">{t('nav.about')}</h4>
+            <div className="flex flex-col space-y-2 text-sm text-slate-300">
+              <a href="#" className="hover:text-primary transition-colors">{t('footer.privacy')}</a>
+              <a href="#" className="hover:text-primary transition-colors">{t('footer.terms')}</a>
+              <a href="#" className="hover:text-primary transition-colors">{t('footer.status')}</a>
+            </div>
+          </div>
+
+          {/* Contact Info */}
+          <div className="md:col-span-2 flex flex-col items-center md:items-start space-y-4">
+            <h4 className="font-bold text-lg text-primary">{t('footer.contact_title')}</h4>
+            <div className="flex flex-col space-y-2 text-sm text-slate-300 items-center md:items-start">
+              <div className="flex items-center gap-2">
+                <span className="text-xl">📞</span>
+                <div className="flex flex-col md:flex-row gap-2 md:gap-4">
+                  <a href="tel:0770587788" className="hover:text-primary transition-colors dir-ltr">0770 58 77 88</a>
+                  <span className="hidden md:inline text-slate-600">|</span>
+                  <a href="tel:0777878085" className="hover:text-primary transition-colors dir-ltr">0777 87 80 85</a>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">📍</span>
+                <span>{t('footer.address')}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">✉️</span>
+                <a href="mailto:Info@innov.Plus" className="hover:text-primary transition-colors">Info@innov.Plus</a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
 
