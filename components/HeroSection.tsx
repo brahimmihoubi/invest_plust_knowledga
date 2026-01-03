@@ -13,6 +13,9 @@ const HeroSection: React.FC = () => {
   const [[page, direction], setPage] = useState([0, 0]);
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+  
+  // Safe access to current announcement
+  const currentAnnouncement = announcements[currentIndex] || announcements[0];
 
   const paginate = useCallback((newDirection: number) => {
     setPage([page + newDirection, newDirection]);
@@ -133,14 +136,14 @@ const HeroSection: React.FC = () => {
                 className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
               >
                 <h1 className="text-2xl sm:text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight max-w-4xl tracking-tight px-2">
-                  {t(`news.announcement_${(announcements[currentIndex] || announcements[0]).id}.title`)}
+                  {t(`news.announcement_${currentAnnouncement.id}.title`)}
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-2xl leading-relaxed px-4">
-                  {t(`news.announcement_${(announcements[currentIndex] || announcements[0]).id}.content`)}
+                  {t(`news.announcement_${currentAnnouncement.id}.content`)}
                 </p>
                 <div className="mt-8 flex items-center gap-2 text-sm font-bold text-primary">
                   <div className="w-8 h-px bg-primary/30"></div>
-                  {(announcements[currentIndex] || announcements[0]).date}
+                  {currentAnnouncement.date}
                   <div className="w-8 h-px bg-primary/30"></div>
                 </div>
               </motion.div>
@@ -230,9 +233,9 @@ const HeroSection: React.FC = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            {(announcements[currentIndex] || announcements[0]).videoUrl ? (
+            {currentAnnouncement.videoUrl ? (
               <a
-                href={announcements[currentIndex].videoUrl}
+                href={currentAnnouncement.videoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-10 py-4 bg-red-600 text-white rounded-2xl font-bold shadow-xl shadow-red-600/25 transition-all flex items-center justify-center gap-2 w-full"
