@@ -32,10 +32,10 @@ The platform consists of **10 Core Modules**, each designed for maximum engageme
 
 ### 2.1. Dynamic Navigation & Hero (Entry Point)
 
-- **Premium Mobile Menu**: Responsive Hamburger menu with smooth overlay and full-screen links.
-- **Smart Navbar**: Responsive navigation with "Glassmorphism" effect, auto-hiding on scroll, and integrated Language Switcher.
-- **Scrollable News Feed**: Horizontally scrollable (swipe-friendly) announcements in the Hero section for mobile.
-- **Call-to-Action (CTA)**: Role-based entry points for Project Owners, Investors, and Partners.
+- **High-Impact Mobile Branding**: Ultra-large mobile logo and zero-padding header design for maximum brand visibility on small screens.
+- **Premium Side Drawer**: Professional right-aligned navigation drawer for mobile with blur-backdrop and touch-optimized links.
+- **Smart Cross-Page Navigation**: Intelligent scroll-to-section logic that works even when navigating from sub-pages (like Registration) back to the Home page.
+- **Scrollable News Feed**: Horizontally swipeable announcement cards in the Hero section with synchronized pagination status.
 
 ### 2.2. Specialized Registration System
 
@@ -81,14 +81,14 @@ The platform features a multi-tiered registration system with specialized forms 
 
 - **Core Framework**: React 19 with TypeScript for type-safe, component-based architecture.
 - **Build Tool**: Vite 6.0 for lightning-fast HMR and optimized production builds.
-- **Styling**: Tailwind CSS 3.4 for utility-first, responsive design with a custom `slate` and `primary` blue palette.
+- **Styling**: Tailwind CSS 3.4 for utility-first, responsive design with a custom `emerald` and `teal` palette.
 - **Data Models**: Synchronized with the KnowVest Admin Dashboard types (PortfolioSize, Specialization, InvestorType, etc.).
 
 ### 3.2. User Experience (UX) & Mobile Design
 
-- **Library**: Framer Motion 12 for high-end animations.
-- **Mobile First**: Optimized touch targets, swipeable components, and no-overflow layout logic.
-- **Behaviors**: SectionReveal triggers, Micro-interactions (hover/tap), and smooth Scroll-to-Section logic.
+- **Library**: Framer Motion 12 for high-end animations and layout transitions.
+- **Responsive Core**: Global overflow-x locking and viewport optimization to ensure 0% layout bleed on mobile devices.
+- **Behaviors**: SectionReveal triggers, Micro-interactions (hover/tap), and robust scroll-to-section logic.
 
 ### 3.3. Internationalization (i18n)
 
@@ -105,8 +105,8 @@ The platform features a multi-tiered registration system with specialized forms 
 ├── components/           # UI Building Blocks
 │   ├── forms/            # Specialized Registration Forms (Investor, Partner, Member)
 │   ├── ui/               # Generic Components (IconButton, SectionReveal)
-│   ├── HeroSection.tsx   # Dynamic Announcements (Swipeable on Mobile)
-│   ├── Navbar.tsx        # Responsive Navigation with Hamburger Menu
+│   ├── HeroSection.tsx   # Swipeable Mobile Slides + Desktop Carousel
+│   ├── Navbar.tsx        # High-Impact Branding + Mobile Side Drawer
 │   └── ...               # All other section components
 ├── services/             # Logic Layer
 ├── views/                # Page Layouts
@@ -133,4 +133,4 @@ Algiers, Algeria
 
 ---
 
-_Updated for KnowVest Plus - v2.2 (Enhanced Mobile UX)_
+_Updated for KnowVest Plus - v2.3 (Premium Mobile Branding)_
