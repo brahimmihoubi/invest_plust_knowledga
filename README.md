@@ -4,7 +4,7 @@
   # KnowVest Plus 
   ### Next-Generation Investment & Business Intelligence Platform
   
-  **🌐 Live Website:** [knowvestplus.netlify.app](https://knowvestplus.netlify.app/)
+  **Live Website:** [knowvestplus.netlify.app](https://knowvestplus.netlify.app/)
   
   [![React](https://img.shields.io/badge/React-19-blue.svg)](https://reactjs.org/)
   [![Vite](https://img.shields.io/badge/Vite-6-purple.svg)](https://vitejs.dev/)
@@ -16,7 +16,7 @@
 
 ---
 
-# Software Requirements Specification
+# Software Requirements Specification & Documentation
 
 ## 1. Executive Summary
 
@@ -26,79 +26,123 @@ The platform is engineered to integrate seamlessly with the **KnowVest Admin Das
 
 ---
 
-## 2. System Modules & Features
+## 2. Key Features & Modules
 
 The platform consists of **10 Core Modules**, each designed for maximum engagement and clarity.
 
-### 2.1. Dynamic Navigation & Hero (Entry Point)
+### 2.1. Dynamic Navigation & User Experience
 
 - **High-Impact Mobile Branding**: Ultra-large mobile logo and zero-padding header design for maximum brand visibility on small screens.
 - **Premium Side Drawer**: Professional right-aligned navigation drawer for mobile with blur-backdrop and touch-optimized links.
 - **Smart Cross-Page Navigation**: Intelligent scroll-to-section logic that works even when navigating from sub-pages (like Registration) back to the Home page.
-- **Scrollable News Feed**: Horizontally swipeable announcement cards in the Hero section with synchronized pagination status.
 
-### 2.2. Specialized Registration System
+### 2.2. Enhanced About Module
+
+- **Statistics Dashboard**: Visual display of key metrics showcasing credibility:
+  - 15+ Years Experience
+  - 500+ Projects Completed
+  - 10K+ Active Investors
+  - 45+ Countries Served
+- **Core Values**: Highlights "Deep Expertise", "Cutting-Edge Technology", and "24/7 Support".
+
+### 2.3. Methodology Visualization (`MethodSection`)
+
+- **5-Step Process**: A visual journey from "Data Analysis" to "Optimization" with animated connecting lines.
+  1. **Data Analysis**
+  2. **Strategy Development**
+  3. **Implementation**
+  4. **Performance Monitoring**
+  5. **Optimization**
+
+### 2.4. Specialized Registration System
 
 The platform features a multi-tiered registration system with specialized forms for different user roles:
 
-- **Project Owners (Primary)**: Focuses on project details, funding goals ($), sectors, and abstracts.
-- **Investors**: Enhanced profiling including Investor Type (VC, Angel, etc.), Portfolio Size, and Accreditation verification.
-- **Partners**: Strategic partnership requests focusing on organization type and digital presence.
-- **Team/Experts**: Talent acquisition form for roles like Analysts, Advisors, and Experts.
+- **Project Owners**: Focuses on project details, funding goals ($), sectors, and abstracts.
+- **Investors**: Enhanced profiling including Investor Type (VC, Angel, etc.) and Portfolio Size.
+- **Partners**: Strategic partnership requests focusing on organization type.
+- **Team/Experts**: Talent acquisition form for Analysts, Advisors, and Experts.
 
-### 2.3. About Module (`AboutSection`)
+### 2.5. Comprehensive Sectors & Networks
 
-- **Statistics Dashboard**: Visual display of key metrics (Years of Exp, Projects, Investors, Global Reach).
-- **Core Values**: "Deep Expertise", "Cutting-Edge Technology", "24/7 Support".
-
-### 2.4. Investment Projects (`ProjectsSection`)
-
-- **Sector Categorization**: Renewable Energy, AI/Tech, Real Estate, Healthcare, Infrastructure, AgriTech.
-- **Submit Project CTA**: Integrated entry point for Project Owners to join the pipeline.
-
-### 2.5. Expert Network (`ExpertsSection`)
-
-- **Specialization Grid**: Finance, Technology, Legal, Market Analysis, Sustainability, Real Estate.
-
-### 2.6. Methodology (`MethodSection`)
-
-- **5-Step Process**: A visual journey from "Data Analysis" to "Optimization" with animated connecting lines.
-
-### 2.7. Investor Tools (`InvestisorSection`)
-
-- **Tool Suite**: Analytics Dashboard, Portfolio Management, AI Insights, Detailed Reports.
-
-### 2.8. Achievements & Impact (`AchievementsSection`)
-
-- **Timeline**: Chronological journey from 2010 to 2025.
-- **Global Impact**: Metrics on Capital Deployed, Jobs Created, and CO2 Reduced.
+- **Investment Projects**: Categorized into Renewable Energy, AI/Tech, Real Estate, Healthcare, Infrastructure, and AgriTech.
+- **Expert Network**: Connecting users with varied specializations including Finance, Legal, and Market Analysis.
 
 ---
 
-## 3. Technical Specifications
+## 3. Technical Architecture
 
-### 3.1. Frontend Architecture
+### 3.1. Frontend Stack
 
 - **Core Framework**: React 19 with TypeScript for type-safe, component-based architecture.
 - **Build Tool**: Vite 6.0 for lightning-fast HMR and optimized production builds.
-- **Styling**: Tailwind CSS 3.4 for utility-first, responsive design with a custom `emerald` and `teal` palette.
-- **Data Models**: Synchronized with the KnowVest Admin Dashboard types (PortfolioSize, Specialization, InvestorType, etc.).
+- **Styling**: Tailwind CSS 3.4 for utility-first design with a custom `emerald` and `teal` palette.
+- **Animations**: Framer Motion 12 for high-end animations, scroll-triggered reveals, and layout transitions.
 
-### 3.2. User Experience (UX) & Mobile Design
+### 3.2. Mobile-First Responsive Design
 
-- **Library**: Framer Motion 12 for high-end animations and layout transitions.
-- **Responsive Core**: Global overflow-x locking and viewport optimization to ensure 0% layout bleed on mobile devices.
-- **Behaviors**: SectionReveal triggers, Micro-interactions (hover/tap), and robust scroll-to-section logic.
+The application implements a rigorous mobile-first strategy:
+
+- **Adaptive Breakpoints**:
+  - `sm`: 640px (Tablets)
+  - `md`: 768px (iPad Portrait)
+  - `lg`: 1024px (Desktop)
+- **Fluid Grids**: All sections utilize responsive grid systems allowing for 1-column layouts on mobile to 4+ columns on desktop.
+- **Touch Optimization**: Evaluation of tap targets (min 44x44px) and swipeable elements for mobile users.
 
 ### 3.3. Internationalization (i18n)
 
-- **Library**: `i18next` & `react-i18next`.
-- **Supported Languages**: English (Default), French, Arabic (Full **RTL** support).
-- **Features**: Dynamic direction switching, browser detection, and persistent language selection.
+Full support for global audiences with `i18next`:
+
+- **Languages**: English, French, and Arabic.
+- **RTL Support**: Native Right-to-Left layout switching for Arabic to ensure cultural correctness.
+- **Persistence**: Language preferences are saved and detected automatically.
+
+### 3.4. Data Integration
+
+- **Models**: Synchronized with the KnowVest Admin Dashboard types (PortfolioSize, Specialization, InvestorType, etc.).
+- **State Management**: Efficient prop drilling and context usage where necessary to manage application state.
 
 ---
 
-## 4. Project Structure
+## 4. Getting Started
+
+Follow these instructions to set up the project locally.
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+
+### Installation
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/brahimmihoubi/invest_plust_knowledga.git
+   cd invest_plust_knowledga
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+---
+
+## 5. Project Structure
 
 ```text
 /
@@ -120,7 +164,7 @@ The platform features a multi-tiered registration system with specialized forms 
 
 ---
 
-## 5. Contact & Support
+## 6. Contact & Support
 
 For technical inquiries or partnership opportunities:
 
@@ -133,4 +177,4 @@ Algiers, Algeria
 
 ---
 
-_Updated for KnowVest Plus - v2.3 (Premium Mobile Branding)_
+_Documentation updated for KnowVest Plus v2.4_
